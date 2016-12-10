@@ -327,6 +327,8 @@ void compute_leader_indices(const std::vector<dimension_type>& predecessor,
     - a bounded precision floating point type (e.g., \c float or \c double);
     - an unbounded integer or rational type, as provided by GMP
       (i.e., \c mpz_class or \c mpq_class).
+    - an unbounded integer or rational type, as provided by GMP
+      (i.e., \c fmpz_class).
 
   The user interface for BDSs is meant to be as similar as possible to
   the one developed for the polyhedron class C_Polyhedron.

@@ -166,7 +166,7 @@ namespace Parma_Polyhedra_Library {
       <CODE>mpz_class</CODE> type implemented by the C++ interface
       of the GMP library (this is the default configuration).
     - The FLINT_Integer type, which in turn is an alias for the
-      <CODE>mpz_class</CODE> type implemented by the C++ interface
+      <CODE>fmpz_class</CODE> type implemented by the C++ interface
       of the GMP library (this is the default configuration).
     - An instance of the Checked_Number class template: with the policy
       Bounded_Integer_Coefficient_Policy, this implements overflow
