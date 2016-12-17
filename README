@@ -842,9 +842,6 @@ ppl-1.2
 |   |-- Expression_Hide_Last_defs.hh
 |   |-- Expression_Hide_Last_inlines.hh
 |   |-- Expression_Hide_Last_types.hh
-|   |-- FLINT_Integer_defs.hh
-|   |-- FLINT_Integer_inlines.hh
-|   |-- FLINT_Integer_types.hh
 |   |-- Float.cc
 |   |-- Float_defs.hh
 |   |-- Float_inlines.hh

@@ -68,21 +68,6 @@ Coefficient_one() {
 }
 #endif // PPL_GMP_INTEGERS
 
-#ifdef PPL_FLINT_INTEGERS
-inline Coefficient_traits::const_reference
-Coefficient_zero() {
-  extern const Coefficient* Coefficient_zero_p;
-  return *Coefficient_zero_p;
-}
-
-inline Coefficient_traits::const_reference
-Coefficient_one() {
-  extern const Coefficient* Coefficient_one_p;
-  PPL_ASSERT(*Coefficient_one_p != 0);
-  return *Coefficient_one_p;
-}
-#endif // PPL_FLINT_INTEGERS
-
 } // namespace Parma_Polyhedra_Library
 
 #endif // !defined(PPL_Coefficient_inlines_hh)

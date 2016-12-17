@@ -119,17 +119,6 @@ COEFFICIENT_DEFS_INCLUDE_FILES = \
 
 endif USE_GMP_INTEGERS
 
-if USE_FLINT_INTEGERS
-
-COEFFICIENT_TYPES_INCLUDE_FILES = \
-  FLINT_Integer_types.hh
-
-COEFFICIENT_DEFS_INCLUDE_FILES = \
-  FLINT_Integer_defs.hh \
-  FLINT_Integer_inlines.hh
-
-endif USE_FLINT_INTEGERS
-
 # The ordering of the following list *matters*!
 INCLUDE_FILES = \
 namespaces.hh \

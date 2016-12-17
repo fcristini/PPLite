@@ -61,29 +61,4 @@ Coefficient_constants_finalize() {
 }
 #endif
 
-#ifdef PPL_FLINT_INTEGERS
-const Coefficient* Coefficient_zero_p = 0;
-const Coefficient* Coefficient_one_p = 0;
-
-void
-Coefficient_constants_initialize() {
-  PPL_ASSERT(Coefficient_zero_p == 0);
-  Coefficient_zero_p = new Coefficient(0);
-
-  PPL_ASSERT(Coefficient_one_p == 0);
-  Coefficient_one_p = new Coefficient(1);
-}
-
-void
-Coefficient_constants_finalize() {
-  PPL_ASSERT(Coefficient_zero_p != 0);
-  delete Coefficient_zero_p;
-  Coefficient_zero_p = 0;
-
-  PPL_ASSERT(Coefficient_one_p != 0);
-  delete Coefficient_one_p;
-  Coefficient_one_p = 0;
-}
-#endif
-
 } // namespace Parma_Polyhedra_Library

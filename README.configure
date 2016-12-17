@@ -196,7 +196,6 @@ the configure option
 where TYPE is one of
 
   mpz,              use GMP unbounded integers (default);
-  fmpz,             use FLINT unbounded integers;
   checked-int8,     use  8-bit checked integers;
   checked-int16,    use 16-bit checked integers;
   checked-int32,    use 32-bit checked integers;

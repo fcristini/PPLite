@@ -35,10 +35,6 @@ site: http://bugseng.com/products/ppl/ . */
 #include "GMP_Integer_defs.hh"
 #endif
 
-#ifdef PPL_FLINT_INTEGERS
-#include "FLINT_Integer_defs.hh"
-#endif
-
 #include <iosfwd>
 
 namespace Parma_Polyhedra_Library {

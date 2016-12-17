@@ -19,10 +19,6 @@ PURPOSE. */
 #include "GMP_Integer_types.hh"
 #endif
 
-#ifdef PPL_FLINT_INTEGERS
-#include "FLINT_Integer_types.hh"
-#endif
-
 #if defined(PPL_CHECKED_INTEGERS) || defined(PPL_NATIVE_INTEGERS)
 
 namespace Parma_Polyhedra_Library {
@@ -163,9 +159,6 @@ namespace Parma_Polyhedra_Library {
   configuration options (see file <CODE>README.configure</CODE>),
   a Coefficient may actually be:
     - The GMP_Integer type, which in turn is an alias for the
-      <CODE>mpz_class</CODE> type implemented by the C++ interface
-      of the GMP library (this is the default configuration).
-    - The FLINT_Integer type, which in turn is an alias for the
       <CODE>mpz_class</CODE> type implemented by the C++ interface
       of the GMP library (this is the default configuration).
     - An instance of the Checked_Number class template: with the policy

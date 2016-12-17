@@ -706,21 +706,14 @@ mpz)
   coefficient_bits=0
   coefficient_mnemonic=mpz
   ;;
-fmpz)
-  AC_MSG_RESULT([FLINT fmpz])
-  coefficient_kind=unbounded_f
-  coefficient_bits=0
-  coefficient_mnemonic=fmpz
-  ;;
 *)
-  AC_MSG_ERROR([bad value ${enableval} for --enable-coefficients, checked-int32, checked-int64, checked-int16, checked-int8, mpz, fmpz, native-int32, native-int64, native-int16 or native-int8])
+  AC_MSG_ERROR([bad value ${enableval} for --enable-coefficients, checked-int32, checked-int64, checked-int16, checked-int8, mpz, native-int32, native-int64, native-int16 or native-int8])
   ;;
 esac
 
 AM_CONDITIONAL(USE_NATIVE_INTEGERS, test x"$coefficient_kind" = xnative)
 AM_CONDITIONAL(USE_CHECKED_INTEGERS, test x"$coefficient_kind" = xchecked)
 AM_CONDITIONAL(USE_GMP_INTEGERS, test x"$coefficient_kind" = xunbounded)
-AM_CONDITIONAL(USE_FLINT_INTEGERS, test x"$coefficient_kind" = xunbounded_f)
 AM_CONDITIONAL(USE_INT8, test x"$coefficient_bits" = x8)
 AM_CONDITIONAL(USE_INT16, test x"$coefficient_bits" = x16)
 AM_CONDITIONAL(USE_INT32, test x"$coefficient_bits" = x32)
@@ -744,11 +737,6 @@ then
   AC_DEFINE(PPL_COEFFICIENT_TYPE, mpz_class)
   AC_DEFINE(PPL_COEFFICIENT_BITS, 0)
   AC_DEFINE(PPL_GMP_INTEGERS, 1, [Defined if the integral type to be used for coefficients is GMP's one.])
-elif test x"$coefficient_kind" = xunbounded_f
-then
-  AC_DEFINE(PPL_COEFFICIENT_TYPE, mpz_class)
-  AC_DEFINE(PPL_COEFFICIENT_BITS, 0)
-  AC_DEFINE(PPL_FLINT_INTEGERS, 1, [Defined if the integral type to be used for coefficients is FLINT's one.])
 fi
 
 # Allow additions to C compilation flags.
