@@ -35,11 +35,11 @@ namespace Parma_Polyhedra_Library {
 
 //! Returns a const reference to the underlying integer value.
 /*! \relates FLINT_Integer */
-const fmpz_class& raw_value(const FLINT_Integer& x);
+const mpz_class& raw_value(const FLINT_Integer& x);
 
 //! Returns a reference to the underlying integer value.
 /*! \relates FLINT_Integer */
-fmpz_class& raw_value(FLINT_Integer& x);
+mpz_class& raw_value(FLINT_Integer& x);
 
 //@} // Accessor Functions
 

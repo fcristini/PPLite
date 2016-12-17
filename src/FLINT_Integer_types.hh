@@ -14,8 +14,8 @@ PURPOSE. */
 #define PPL_FLINT_Integer_types_hh 1
 
 #include "Coefficient_traits_template.hh"
-//#include "mp_std_bits_defs.hh"
-#include <fmpz_class.hh>
+#include "mp_std_bits_defs.hh"
+#include <gmpxx.h>
 
 namespace Parma_Polyhedra_Library {
 
@@ -28,7 +28,7 @@ namespace Parma_Polyhedra_Library {
   defined in the C++ interface of the GMP library.
   For more information, see <CODE>http://gmplib.org/</CODE>
 */
-typedef fmpz_class FLINT_Integer;
+typedef mpz_class FLINT_Integer;
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for unbounded integers.

@@ -30,89 +30,89 @@ namespace Parma_Polyhedra_Library {
 
 inline void
 neg_assign(FLINT_Integer& x) {
-  fmpz_neg(x.get_fmpz_t(), x.get_fmpz_t());
+  mpz_neg(x.get_mpz_t(), x.get_mpz_t());
 }
 
 inline void
 neg_assign(FLINT_Integer& x, const FLINT_Integer& y) {
-  fmpz_neg(x.get_fmpz_t(), y.get_fmpz_t());
+  mpz_neg(x.get_mpz_t(), y.get_mpz_t());
 }
 
 inline void
 abs_assign(FLINT_Integer& x) {
-  fmpz_abs(x.get_fmpz_t(), x.get_fmpz_t());
+  mpz_abs(x.get_mpz_t(), x.get_mpz_t());
 }
 
 inline void
 abs_assign(FLINT_Integer& x, const FLINT_Integer& y) {
-  fmpz_abs(x.get_fmpz_t(), y.get_fmpz_t());
+  mpz_abs(x.get_mpz_t(), y.get_mpz_t());
 }
 
 inline void
 gcd_assign(FLINT_Integer& x, const FLINT_Integer& y, const FLINT_Integer& z) {
-  fmpz_gcd(x.get_fmpz_t(), y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_gcd(x.get_mpz_t(), y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 rem_assign(FLINT_Integer& x, const FLINT_Integer& y, const FLINT_Integer& z) {
-  fmpz_tdiv_q(x.get_fmpz_t(), y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_tdiv_r(x.get_mpz_t(), y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 gcdext_assign(FLINT_Integer& x, FLINT_Integer& s, FLINT_Integer& t,
               const FLINT_Integer& y, const FLINT_Integer& z) {
-  fmpz_xgcd (x.get_fmpz_t(),
-             s.get_fmpz_t(), t.get_fmpz_t(),
-             y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_gcdext(x.get_mpz_t(),
+             s.get_mpz_t(), t.get_mpz_t(),
+             y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 lcm_assign(FLINT_Integer& x, const FLINT_Integer& y, const FLINT_Integer& z) {
-  fmpz_lcm(x.get_fmpz_t(), y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_lcm(x.get_mpz_t(), y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 add_mul_assign(FLINT_Integer& x, const FLINT_Integer& y, const FLINT_Integer& z) {
-  fmpz_addmul(x.get_fmpz_t(), y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_addmul(x.get_mpz_t(), y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 sub_mul_assign(FLINT_Integer& x, const FLINT_Integer& y, const FLINT_Integer& z) {
-  fmpz_submul(x.get_fmpz_t(), y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_submul(x.get_mpz_t(), y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 mul_2exp_assign(FLINT_Integer& x, const FLINT_Integer& y, const unsigned int exp) {
-  fmpz_mul_2exp(x.get_fmpz_t(), y.get_fmpz_t(), exp);
+  mpz_mul_2exp(x.get_mpz_t(), y.get_mpz_t(), exp);
 }
 
 inline void
 div_2exp_assign(FLINT_Integer& x, const FLINT_Integer& y, const unsigned int exp) {
-  fmpz_tdiv_q_2exp(x.get_fmpz_t(), y.get_fmpz_t(), exp);
+  mpz_tdiv_q_2exp(x.get_mpz_t(), y.get_mpz_t(), exp);
 }
 
 inline void
 exact_div_assign(FLINT_Integer& x, const FLINT_Integer& y, const FLINT_Integer& z) {
   PPL_ASSERT(y % z == 0);
-  fmpz_divexact(x.get_fmpz_t(), y.get_fmpz_t(), z.get_fmpz_t());
+  mpz_divexact(x.get_mpz_t(), y.get_mpz_t(), z.get_mpz_t());
 }
 
 inline void
 sqrt_assign(FLINT_Integer& x, const FLINT_Integer& y) {
-  fmpz_sqrt(x.get_fmpz_t(), y.get_fmpz_t());
+  mpz_sqrt(x.get_mpz_t(), y.get_mpz_t());
 }
 
 inline int
 cmp(const FLINT_Integer& x, const FLINT_Integer& y) {
-  return fmpz_cmp(x.get_fmpz_t(), y.get_fmpz_t());
+  return mpz_cmp(x.get_mpz_t(), y.get_mpz_t());
 }
 
-inline const fmpz_class&
+inline const mpz_class&
 raw_value(const FLINT_Integer& x) {
   return x;
 }
 
-inline fmpz_class&
+inline mpz_class&
 raw_value(FLINT_Integer& x) {
   return x;
 }
