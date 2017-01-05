@@ -25,7 +25,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "ppl-config.h"
 #include "Polyhedron_defs.hh"
 #include "BHRZ03_Certificate_defs.hh"
-#include "Rational_Box.hh"
+/////#include "Rational_Box.hh"
 #include "Scalar_Products_defs.hh"
 #include "Scalar_Products_inlines.hh"
 #include "assertions.hh"
@@ -381,7 +381,7 @@ PPL::Polyhedron::limited_H79_extrapolation_assign(const Polyhedron& y,
   x.add_recycled_constraints(new_cs);
   PPL_ASSERT_HEAVY(OK());
 }
-
+/*
 void
 PPL::Polyhedron::bounded_H79_extrapolation_assign(const Polyhedron& y,
                                                   const Constraint_System& cs,
@@ -393,7 +393,7 @@ PPL::Polyhedron::bounded_H79_extrapolation_assign(const Polyhedron& y,
   Constraint_System x_box_cs = x_box.constraints();
   add_recycled_constraints(x_box_cs);
 }
-
+*/
 bool
 PPL::Polyhedron
 ::BHRZ03_combining_constraints(const Polyhedron& y,
@@ -922,7 +922,7 @@ PPL::Polyhedron
   x.add_recycled_constraints(new_cs);
   PPL_ASSERT_HEAVY(OK());
 }
-
+/*
 void
 PPL::Polyhedron
 ::bounded_BHRZ03_extrapolation_assign(const Polyhedron& y,
@@ -935,3 +935,4 @@ PPL::Polyhedron
   Constraint_System x_box_cs = x_box.constraints();
   add_recycled_constraints(x_box_cs);
 }
+*/

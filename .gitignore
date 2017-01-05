@@ -25,6 +25,7 @@ config.status
 configure
 conftest
 conftest.c
+dbg/
 libtool
 ppl-config.h
 ppl-config.h.in

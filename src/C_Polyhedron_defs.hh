@@ -28,8 +28,8 @@ site: http://bugseng.com/products/ppl/ . */
 #include "NNC_Polyhedron_types.hh"
 #include "Polyhedron_defs.hh"
 #include "Grid_types.hh"
-#include "BD_Shape_types.hh"
-#include "Octagonal_Shape_types.hh"
+/////#include "BD_Shape_types.hh"
+/////#include "Octagonal_Shape_types.hh"
 
 //! A closed convex polyhedron.
 /*! \ingroup PPL_CXX_interface
@@ -190,11 +190,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p box exceeds the maximum allowed
     space dimension.
-  */
+  *//*
   template <typename Interval>
   explicit C_Polyhedron(const Box<Interval>& box,
                         Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a C polyhedron out of a BD shape.
   /*!
     The polyhedron inherits the space dimension of the BDS and is
@@ -206,11 +206,11 @@ public:
     \param complexity
     This argument is ignored as the algorithm used has
     polynomial complexity.
-  */
+  *//*
   template <typename U>
   explicit C_Polyhedron(const BD_Shape<U>& bd,
                         Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a C polyhedron out of an octagonal shape.
   /*!
     The polyhedron inherits the space dimension of the octagonal shape
@@ -222,11 +222,11 @@ public:
     \param complexity
     This argument is ignored as the algorithm used has
     polynomial complexity.
-  */
+  *//*
   template <typename U>
   explicit C_Polyhedron(const Octagonal_Shape<U>& os,
                         Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a C polyhedron out of a grid.
   /*!
     The polyhedron inherits the space dimension of the grid

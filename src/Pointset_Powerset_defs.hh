@@ -209,11 +209,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p os exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename T>
   explicit Pointset_Powerset(const Octagonal_Shape<T>& os,
                              Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a pointset_powerset out of a bd shape.
   /*!
     If the bd shape is nonempty, builds a powerset containing a
@@ -230,11 +230,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p bds exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename T>
   explicit Pointset_Powerset(const BD_Shape<T>& bds,
                              Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a pointset_powerset out of a box.
   /*!
     If the box is nonempty, builds a powerset containing a single
@@ -250,11 +250,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p box exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename Interval>
   explicit Pointset_Powerset(const Box<Interval>& box,
                              Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //@} // Constructors and Destructor
 
   //! \name Member Functions that Do Not Modify the Pointset_Powerset

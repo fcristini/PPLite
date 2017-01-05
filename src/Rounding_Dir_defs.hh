@@ -24,8 +24,8 @@ site: http://bugseng.com/products/ppl/ . */
 #ifndef PPL_Rounding_defs_hh
 #define PPL_Rounding_defs_hh 1
 
-#include "Result_defs.hh"
-#include "fpu_defs.hh"
+/////#include "Result_defs.hh"
+/////#include "fpu_defs.hh"
 
 namespace Parma_Polyhedra_Library {
 
@@ -112,13 +112,14 @@ bool round_inverse(Rounding_Dir dir);
 bool round_strict_relation(Rounding_Dir dir);
 
 /*! \ingroup PPL_CXX_interface */
-fpu_rounding_direction_type round_fpu_dir(Rounding_Dir dir);
+//////fpu_rounding_direction_type round_fpu_dir(Rounding_Dir dir);
 
 //@} // Functions Inspecting and/or Combining Rounding_Dir Values
 
 } // namespace Parma_Polyhedra_Library
 
+#ifndef FABIO_NO_INLINES
 #include "Rounding_Dir_inlines.hh"
+#endif
 
-#endif // !defined(PPL_Float_defs_hh)
-
+#endif // !defined(PPL_Rounding_defs_hh)

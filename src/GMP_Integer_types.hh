@@ -13,8 +13,13 @@ PURPOSE. */
 #ifndef PPL_GMP_Integer_types_hh
 #define PPL_GMP_Integer_types_hh 1
 
+#ifndef FABIO_NO_INLINES
+
 #include "Coefficient_traits_template.hh"
 #include "mp_std_bits_defs.hh"
+
+#endif
+
 #include <gmpxx.h>
 
 namespace Parma_Polyhedra_Library {
@@ -30,6 +35,8 @@ namespace Parma_Polyhedra_Library {
 */
 typedef mpz_class GMP_Integer;
 
+#ifndef FABIO_NO_INLINES
+
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for unbounded integers.
 /*! \ingroup PPL_CXX_interface */
@@ -39,6 +46,8 @@ struct Coefficient_traits_template<GMP_Integer> {
   //! The type used for references to const unbounded integers.
   typedef const GMP_Integer& const_reference;
 };
+
+#endif
 
 } // namespace Parma_Polyhedra_Library
 

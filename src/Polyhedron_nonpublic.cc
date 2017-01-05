@@ -26,13 +26,14 @@ site: http://bugseng.com/products/ppl/ . */
 #include "Polyhedron_defs.hh"
 #include "Scalar_Products_defs.hh"
 #include "Scalar_Products_inlines.hh"
-#include "Linear_Form_defs.hh"
+/////#include "Linear_Form_defs.hh"
 #include "C_Integer.hh"
 #include "assertions.hh"
 #include <string>
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
+#include "Checked_Compat_defs.hh"
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 /*! \ingroup PPL_defines

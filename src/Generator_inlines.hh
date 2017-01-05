@@ -553,10 +553,10 @@ Generator::m_swap(Generator& y) {
   swap(kind_, y.kind_);
   swap(topology_, y.topology_);
 }
-
+/*
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 /*! \relates Generator */
-#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
+/*#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
 template <typename Specialization, typename Temp, typename To>
 inline bool
 l_m_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
@@ -618,7 +618,7 @@ l_m_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename Temp, typename To>
+/*template <typename Temp, typename To>
 inline bool
 rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                             const Generator& x,
@@ -632,7 +632,7 @@ rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename Temp, typename To>
+/*template <typename Temp, typename To>
 inline bool
 rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                             const Generator& x,
@@ -646,7 +646,7 @@ rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename To>
+/*template <typename To>
 inline bool
 rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                             const Generator& x,
@@ -656,7 +656,7 @@ rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename Temp, typename To>
+/*template <typename Temp, typename To>
 inline bool
 euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                           const Generator& x,
@@ -670,7 +670,7 @@ euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename Temp, typename To>
+/*template <typename Temp, typename To>
 inline bool
 euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                           const Generator& x,
@@ -684,7 +684,7 @@ euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename To>
+/*template <typename To>
 inline bool
 euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                           const Generator& x,
@@ -694,7 +694,7 @@ euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename Temp, typename To>
+/*template <typename Temp, typename To>
 inline bool
 l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                            const Generator& x,
@@ -708,7 +708,7 @@ l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename Temp, typename To>
+/*template <typename Temp, typename To>
 inline bool
 l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                            const Generator& x,
@@ -722,14 +722,14 @@ l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
 }
 
 /*! \relates Generator */
-template <typename To>
+/*template <typename To>
 inline bool
 l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                            const Generator& x,
                            const Generator& y,
                            const Rounding_Dir dir) {
   return l_infinity_distance_assign<To, To>(r, x, y, dir);
-}
+}*/
 
 /*! \relates Generator */
 inline void

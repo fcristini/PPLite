@@ -43,9 +43,9 @@ site: http://bugseng.com/products/ppl/ . */
 #include "C_Polyhedron_types.hh"
 #include "NNC_Polyhedron_types.hh"
 #include "Grid_types.hh"
-#include "Box_types.hh"
-#include "BD_Shape_types.hh"
-#include "Octagonal_Shape_types.hh"
+/////#include "Box_types.hh"
+/////#include "BD_Shape_types.hh"
+/////#include "Octagonal_Shape_types.hh"
 
 namespace Parma_Polyhedra_Library {
 
@@ -568,11 +568,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p box exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename Interval>
   Partially_Reduced_Product(const Box<Interval>& box,
                             Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a product out of a BD shape.
   /*!
     Builds a product containing \p bd.
@@ -587,11 +587,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p bd exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename U>
   Partially_Reduced_Product(const BD_Shape<U>& bd,
                             Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a product out of an octagonal shape.
   /*!
     Builds a product containing \p os.
@@ -606,11 +606,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p os exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename U>
   Partially_Reduced_Product(const Octagonal_Shape<U>& os,
                             Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Ordinary copy constructor.
   Partially_Reduced_Product(const Partially_Reduced_Product& y,
                             Complexity_Class complexity = ANY_COMPLEXITY);

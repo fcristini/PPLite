@@ -185,7 +185,7 @@ Grid::Grid(Grid_Generator_System& ggs, Recycle_Input)
     gen_sys(ggs.space_dimension()) {
   construct(ggs);
 }
-
+/*
 template <typename U>
 inline
 Grid::Grid(const BD_Shape<U>& bd, Complexity_Class)
@@ -215,7 +215,7 @@ Grid::Grid(const Octagonal_Shape<U>& os, Complexity_Class)
   Congruence_System cgs = os.congruences();
   construct(cgs);
 }
-
+*/
 inline
 Grid::~Grid() {
 }

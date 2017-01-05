@@ -25,6 +25,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "wrap_string.hh"
 #include "assertions.hh"
 #include <cstdlib>
+/////#include "C_Integer.hh"
 
 namespace Parma_Polyhedra_Library {
 

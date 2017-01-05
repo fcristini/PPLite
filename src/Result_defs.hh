@@ -190,6 +190,8 @@ Result result_relation_class(Result r);
 
 } // namespace Parma_Polyhedra_Library
 
+#ifndef FABIO_NO_INLINES
 #include "Result_inlines.hh"
+#endif
 
 #endif // !defined(PPL_Result_defs_hh)

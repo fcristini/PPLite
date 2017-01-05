@@ -130,14 +130,10 @@ Has_Assign_Or_Swap.hh \
 assign_or_swap.hh \
 mp_std_bits_defs.hh \
 mp_std_bits_inlines.hh \
-Concrete_Expression_types.hh \
-Concrete_Expression_defs.hh \
-Concrete_Expression_inlines.hh \
 Temp_defs.hh \
 Temp_inlines.hh \
 Temp_templates.hh \
 Coefficient_traits_template.hh \
-Checked_Number_types.hh \
 termination_types.hh \
 $(COEFFICIENT_TYPES_INCLUDE_FILES) \
 Coefficient_types.hh \
@@ -145,10 +141,6 @@ stdiobuf_types.hh \
 c_streambuf_types.hh \
 globals_types.hh \
 iterator_to_const_types.hh \
-distances_types.hh \
-Interval_Info_types.hh \
-Interval_types.hh \
-Box_types.hh \
 Constraint_types.hh \
 Generator_types.hh \
 Grid_Generator_types.hh \
@@ -168,7 +160,6 @@ Expression_Hide_Inhomo_types.hh \
 Linear_Expression_Impl_types.hh \
 Linear_Expression_Interface_types.hh \
 Linear_System_types.hh \
-Linear_Form_types.hh \
 Bit_Row_types.hh \
 Bit_Matrix_types.hh \
 Constraint_System_types.hh \
@@ -189,39 +180,12 @@ C_Polyhedron_types.hh \
 NNC_Polyhedron_types.hh \
 Grid_types.hh \
 Ptr_Iterator_types.hh \
-DB_Row_types.hh \
-DB_Matrix_types.hh \
-BD_Shape_types.hh \
-OR_Matrix_types.hh \
-Octagonal_Shape_types.hh \
-fpu_types.hh \
-Float_defs.hh \
-Float_inlines.hh \
-Float_templates.hh \
 C_Integer.hh \
-fpu_defs.hh \
-fpu-c99_inlines.hh \
-fpu-ia32_inlines.hh \
-fpu-none_inlines.hh \
-fpu-sparc_inlines.hh \
 Rounding_Dir_defs.hh \
 Rounding_Dir_inlines.hh \
 Result_defs.hh \
 Result_inlines.hh \
 Numeric_Format_defs.hh \
-checked_defs.hh \
-checked_inlines.hh \
-checked_int_inlines.hh \
-checked_float_inlines.hh \
-checked_mpz_inlines.hh \
-checked_mpq_inlines.hh \
-checked_ext_inlines.hh \
-Checked_Number_defs.hh \
-Checked_Number_inlines.hh \
-Checked_Number_templates.hh \
-WRD_coefficient_types_defs.hh \
-WRD_coefficient_types_inlines.hh \
-checked_numeric_limits.hh \
 $(COEFFICIENT_DEFS_INCLUDE_FILES) \
 Coefficient_defs.hh \
 Coefficient_inlines.hh \
@@ -235,22 +199,6 @@ math_utilities_defs.hh \
 math_utilities_inlines.hh \
 iterator_to_const_defs.hh \
 iterator_to_const_inlines.hh \
-distances_defs.hh \
-distances_inlines.hh \
-Boundary_defs.hh \
-intervals_defs.hh \
-Interval_Info_defs.hh \
-Interval_Info_inlines.hh \
-Interval_defs.hh \
-Interval_inlines.hh \
-Interval_templates.hh \
-Box_defs.hh \
-Box_Status_inlines.hh \
-Box_inlines.hh \
-Box_templates.hh \
-Integer_Interval.hh \
-Rational_Interval.hh \
-Rational_Box.hh \
 Variable_defs.hh \
 Variable_inlines.hh \
 Variables_Set_defs.hh \
@@ -291,10 +239,6 @@ Linear_Expression_Impl_defs.hh \
 Linear_Expression_Impl_inlines.hh \
 Linear_Expression_Impl_templates.hh \
 Linear_Expression_Interface_defs.hh \
-Linear_Form_defs.hh \
-Linear_Form_inlines.hh \
-Linear_Form_templates.hh \
-linearize.hh \
 Constraint_defs.hh \
 Constraint_inlines.hh \
 Constraint_System_inlines.hh \
@@ -314,6 +258,8 @@ Matrix_inlines.hh \
 Matrix_templates.hh \
 Swapping_Vector_defs.hh \
 Swapping_Vector_inlines.hh \
+Checked_Compat_defs.hh \
+Checked_Compat_inlines.hh \
 MIP_Problem_types.hh \
 MIP_Problem_defs.hh \
 MIP_Problem_inlines.hh \
@@ -358,23 +304,6 @@ Widening_Function_defs.hh \
 Widening_Function_inlines.hh \
 Ptr_Iterator_defs.hh \
 Ptr_Iterator_inlines.hh \
-DB_Row_defs.hh \
-DB_Row_inlines.hh \
-DB_Row_templates.hh \
-DB_Matrix_defs.hh \
-DB_Matrix_inlines.hh \
-DB_Matrix_templates.hh \
-BD_Shape_defs.hh \
-BDS_Status_inlines.hh \
-BD_Shape_inlines.hh \
-BD_Shape_templates.hh \
-OR_Matrix_defs.hh \
-OR_Matrix_inlines.hh \
-OR_Matrix_templates.hh \
-Octagonal_Shape_defs.hh \
-Og_Status_inlines.hh \
-Octagonal_Shape_inlines.hh \
-Octagonal_Shape_templates.hh \
 Determinate_types.hh \
 Determinate_defs.hh \
 Determinate_inlines.hh \
@@ -397,39 +326,6 @@ termination_defs.hh \
 termination_templates.hh \
 wrap_assign.hh \
 wrap_string.hh \
-Floating_Point_Expression_types.hh \
-Floating_Point_Expression_defs.hh \
-Floating_Point_Expression_inlines.hh \
-Floating_Point_Expression_templates.hh \
-Cast_Floating_Point_Expression_types.hh \
-Cast_Floating_Point_Expression_defs.hh \
-Cast_Floating_Point_Expression_inlines.hh \
-Cast_Floating_Point_Expression_templates.hh \
-Constant_Floating_Point_Expression_types.hh \
-Constant_Floating_Point_Expression_defs.hh \
-Constant_Floating_Point_Expression_inlines.hh \
-Variable_Floating_Point_Expression_types.hh \
-Variable_Floating_Point_Expression_defs.hh \
-Variable_Floating_Point_Expression_inlines.hh \
-Sum_Floating_Point_Expression_types.hh \
-Sum_Floating_Point_Expression_defs.hh \
-Sum_Floating_Point_Expression_inlines.hh \
-Sum_Floating_Point_Expression_templates.hh \
-Difference_Floating_Point_Expression_types.hh \
-Difference_Floating_Point_Expression_defs.hh \
-Difference_Floating_Point_Expression_inlines.hh \
-Difference_Floating_Point_Expression_templates.hh \
-Multiplication_Floating_Point_Expression_types.hh \
-Multiplication_Floating_Point_Expression_defs.hh \
-Multiplication_Floating_Point_Expression_inlines.hh \
-Multiplication_Floating_Point_Expression_templates.hh \
-Division_Floating_Point_Expression_types.hh \
-Division_Floating_Point_Expression_defs.hh \
-Division_Floating_Point_Expression_inlines.hh \
-Division_Floating_Point_Expression_templates.hh \
-Opposite_Floating_Point_Expression_types.hh \
-Opposite_Floating_Point_Expression_defs.hh \
-Opposite_Floating_Point_Expression_inlines.hh \
 Doubly_Linked_Object_types.hh \
 EList_types.hh \
 EList_Iterator_types.hh \
@@ -459,36 +355,13 @@ Watchdog_inlines.hh \
 Threshold_Watcher_defs.hh \
 Threshold_Watcher_inlines.hh \
 Threshold_Watcher_templates.hh
-#Any_Pointset_types.hh \
-#Any_Pointset_defs.hh \
-#Any_Pointset_inlines.hh \
-#Ask_Tell_types.hh \
-#Ask_Tell_defs.hh \
-#Ask_Tell_inlines.hh \
-#Ask_Tell_templates.hh \
-#Pointset_Ask_Tell_types.hh \
-#Pointset_Ask_Tell_defs.hh \
-#Pointset_Ask_Tell_inlines.hh \
-#Pointset_Ask_Tell_templates.hh
 
 NESTED_INCLUDE_FILES = \
 Ph_Status_idefs.hh \
-Grid_Status_idefs.hh \
-Box_Status_idefs.hh \
-BDS_Status_idefs.hh \
-Og_Status_idefs.hh
+Grid_Status_idefs.hh
 
 libppl_la_SOURCES = \
 assertions.cc \
-Box.cc \
-checked.cc \
-Checked_Number.cc \
-Float.cc \
-fpu-ia32.cc \
-BDS_Status.cc \
-Box_Status.cc \
-Og_Status.cc \
-Concrete_Expression.cc \
 Constraint.cc \
 Constraint_System.cc \
 Congruence.cc \
@@ -503,7 +376,6 @@ Coefficient.cc \
 Linear_Expression.cc \
 Linear_Expression_Impl.cc \
 Linear_Expression_Interface.cc \
-Linear_Form.cc \
 Scalar_Products.cc \
 MIP_Problem.cc \
 PIP_Tree.cc \
@@ -524,8 +396,6 @@ Grid_nonpublic.cc \
 Grid_public.cc \
 Grid_chdims.cc \
 Grid_widenings.cc \
-BD_Shape.cc \
-Octagonal_Shape.cc \
 Pointset_Powerset.cc \
 CO_Tree.cc \
 Sparse_Row.cc \
@@ -553,7 +423,6 @@ wrap_string.cc \
 Time.cc \
 Watchdog.cc \
 Threshold_Watcher.cc
-#Pointset_Ask_Tell.cc
 
 if NO_UNDEFINED
 

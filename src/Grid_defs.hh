@@ -40,10 +40,10 @@ site: http://bugseng.com/products/ppl/ . */
 #include "Poly_Con_Relation_defs.hh"
 #include "Poly_Gen_Relation_defs.hh"
 #include "Grid_Certificate_types.hh"
-#include "Box_types.hh"
+/////#include "Box_types.hh"
 #include "Polyhedron_types.hh"
-#include "BD_Shape_types.hh"
-#include "Octagonal_Shape_types.hh"
+/////#include "BD_Shape_types.hh"
+/////#include "Octagonal_Shape_types.hh"
 #include <vector>
 #include <iosfwd>
 
@@ -514,11 +514,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p box exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename Interval>
   explicit Grid(const Box<Interval>& box,
                 Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a grid out of a bounded-difference shape.
   /*!
     The grid inherits the space dimension of the BDS.
@@ -534,11 +534,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p bd exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename U>
   explicit Grid(const BD_Shape<U>& bd,
                 Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a grid out of an octagonal shape.
   /*!
     The grid inherits the space dimension of the octagonal shape.
@@ -554,11 +554,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p os exceeds the maximum
     allowed space dimension.
-  */
+  *//*
   template <typename U>
   explicit Grid(const Octagonal_Shape<U>& os,
                 Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   /*! \brief
     Builds a grid from a polyhedron using algorithms whose complexity
     does not exceed the one specified by \p complexity.
@@ -1925,7 +1925,7 @@ public:
 
   friend class Parma_Polyhedra_Library::Grid_Certificate;
 
-  template <typename Interval> friend class Parma_Polyhedra_Library::Box;
+  /////template <typename Interval> friend class Parma_Polyhedra_Library::Box;
 
   //! \name Miscellaneous Member Functions
   //@{

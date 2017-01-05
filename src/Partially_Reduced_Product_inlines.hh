@@ -113,7 +113,7 @@ Partially_Reduced_Product<D1, D2, R>
   : d1(gr), d2(gr) {
   set_reduced_flag();
 }
-
+/*
 template <typename D1, typename D2, typename R>
 template <typename Interval>
 inline
@@ -122,7 +122,7 @@ Partially_Reduced_Product<D1, D2, R>
   : d1(box), d2(box) {
   set_reduced_flag();
 }
-
+*//*
 template <typename D1, typename D2, typename R>
 template <typename U>
 inline
@@ -131,7 +131,7 @@ Partially_Reduced_Product<D1, D2, R>
   : d1(bd), d2(bd) {
   set_reduced_flag();
 }
-
+*//*
 template <typename D1, typename D2, typename R>
 template <typename U>
 inline
@@ -140,7 +140,7 @@ Partially_Reduced_Product<D1, D2, R>
   : d1(os), d2(os) {
   set_reduced_flag();
 }
-
+*/
 template <typename D1, typename D2, typename R>
 inline
 Partially_Reduced_Product<D1, D2, R>

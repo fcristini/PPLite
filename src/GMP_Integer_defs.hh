@@ -129,6 +129,8 @@ int cmp(const GMP_Integer& x, const GMP_Integer& y);
 
 } // namespace Parma_Polyhedra_Library
 
+#ifndef FABIO_NO_INLINES
 #include "GMP_Integer_inlines.hh"
+#endif
 
 #endif // !defined(PPL_GMP_Integer_defs_hh)

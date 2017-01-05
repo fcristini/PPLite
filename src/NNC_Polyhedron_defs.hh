@@ -169,11 +169,11 @@ public:
     \exception std::length_error
     Thrown if the space dimension of \p box exceeds the maximum allowed
     space dimension.
-  */
+  *//*
   template <typename Interval>
   explicit NNC_Polyhedron(const Box<Interval>& box,
                           Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds an NNC polyhedron out of a grid.
   /*!
     The polyhedron inherits the space dimension of the grid
@@ -200,11 +200,11 @@ public:
     \param complexity
     This argument is ignored as the algorithm used has
     polynomial complexity.
-  */
+  *//*
   template <typename U>
   explicit NNC_Polyhedron(const BD_Shape<U>& bd,
                           Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Builds a NNC polyhedron out of an octagonal shape.
   /*!
     The polyhedron inherits the space dimension of the octagonal shape
@@ -216,11 +216,11 @@ public:
     \param complexity
     This argument is ignored as the algorithm used has
     polynomial complexity.
-  */
+  *//*
   template <typename U>
   explicit NNC_Polyhedron(const Octagonal_Shape<U>& os,
                           Complexity_Class complexity = ANY_COMPLEXITY);
-
+*/
   //! Ordinary copy constructor.
   NNC_Polyhedron(const NNC_Polyhedron& y,
                  Complexity_Class complexity = ANY_COMPLEXITY);

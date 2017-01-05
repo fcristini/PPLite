@@ -26,15 +26,15 @@ site: http://bugseng.com/products/ppl/ . */
 
 #include "Generator_defs.hh"
 #include "MIP_Problem_defs.hh"
-#include "Interval_defs.hh"
-#include "Linear_Form_defs.hh"
+/////#include "Interval_defs.hh"
+/////#include "Linear_Form_defs.hh"
 // For static method overflows.
-#include "Floating_Point_Expression_defs.hh"
+/////#include "Floating_Point_Expression_defs.hh"
 #include <algorithm>
 #include <deque>
 
 namespace Parma_Polyhedra_Library {
-
+/*
 template <typename Interval>
 Polyhedron::Polyhedron(Topology topol,
                        const Box<Interval>& box,
@@ -147,7 +147,7 @@ Polyhedron::Polyhedron(Topology topol,
   set_constraints_up_to_date();
   PPL_ASSERT_HEAVY(OK());
 }
-
+*/
 template <typename Partial_Function>
 void
 Polyhedron::map_space_dimensions(const Partial_Function& pfunc) {
@@ -294,7 +294,7 @@ Polyhedron::map_space_dimensions(const Partial_Function& pfunc) {
   m_swap(new_polyhedron);
   PPL_ASSERT_HEAVY(OK(true));
 }
-
+/*
 template <typename FP_Format, typename Interval_Info>
 void
 Polyhedron::refine_with_linear_form_inequality(
@@ -366,7 +366,8 @@ Polyhedron::refine_with_linear_form_inequality(
     refine_with_constraint(lf_approx_le < 0);
   }
 }
-
+*/
+/*
 template <typename FP_Format, typename Interval_Info>
 void
 Polyhedron::affine_form_image(const Variable var,
@@ -424,7 +425,8 @@ const Linear_Form<Interval <FP_Format, Interval_Info> >& lf) {
   bounded_affine_image(var, lf_approx_le + lo_coeff, lf_approx_le + hi_coeff,
                        denominator);
 }
-
+*/
+/*
 template <typename FP_Format, typename Interval_Info>
 void
 Polyhedron
@@ -470,7 +472,8 @@ Polyhedron
     }
   }
 }
-
+*/
+/*
 template <typename FP_Format, typename Interval_Info>
 void
 Polyhedron::convert_to_integer_expression(
@@ -518,7 +521,8 @@ Polyhedron::convert_to_integer_expression(
     result += numerators[lf_dimension];
   }
 }
-
+*/
+/*
 template <typename FP_Format, typename Interval_Info>
 void
 Polyhedron::convert_to_integer_expressions(
@@ -585,7 +589,8 @@ Polyhedron::convert_to_integer_expressions(
     res_hi_coeff = 0;
   }
 }
-
+*/
+/*
 template <typename C>
 void
 Polyhedron::throw_dimension_incompatible(const char* method,
@@ -593,7 +598,7 @@ Polyhedron::throw_dimension_incompatible(const char* method,
                                          const Linear_Form<C>& lf) const {
   throw_dimension_incompatible(method, lf_name, lf.space_dimension());
 }
-
+*/
 template <typename Input>
 Input&
 Polyhedron::check_obj_space_dimension_overflow(Input& input,

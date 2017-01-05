@@ -46,7 +46,7 @@ low_bits_mask(const unsigned n) {
   PPL_ASSERT(n < unsigned(std::numeric_limits<T>::digits));
   return ~((~static_cast<T>(0)) << n);
 }
-
+/*
 template <typename T>
 inline typename Enable_If<Is_Native_Or_Checked<T>::value, void>::type
 numer_denom(const T& from,
@@ -74,7 +74,7 @@ div_round_up(T& to,
   div_assign_r(q_x, q_x, q_y, ROUND_NOT_NEEDED);
   assign_r(to, q_x, ROUND_UP);
 }
-
+*/
 template <typename N>
 inline void
 min_assign(N& x, const N& y) {
@@ -90,7 +90,7 @@ max_assign(N& x, const N& y) {
     x = y;
   }
 }
-
+/*
 template <typename T>
 inline typename Enable_If<Is_Native_Or_Checked<T>::value, bool>::type
 is_even(const T& x) {
@@ -106,7 +106,7 @@ is_additive_inverse(const T& x, const T& y) {
   return neg_assign_r(negated_x, x, ROUND_DIRECT | ROUND_STRICT_RELATION) == V_EQ
     && negated_x == y;
 }
-
+*/
 inline bool
 is_canonical(const mpq_class& x) {
   if (x.get_den() <= 0) {

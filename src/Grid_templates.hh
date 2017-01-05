@@ -31,7 +31,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include <deque>
 
 namespace Parma_Polyhedra_Library {
-
+/*
 template <typename Interval>
 Grid::Grid(const Box<Interval>& box, Complexity_Class)
   : con_sys(),
@@ -112,7 +112,7 @@ Grid::Grid(const Box<Interval>& box, Complexity_Class)
   }
 
   PPL_ASSERT(OK());
-}
+}*/
 
 template <typename Partial_Function>
 void

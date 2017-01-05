@@ -137,7 +137,7 @@ Pointset_Powerset<PSET>
   x.reduced = false;
   PPL_ASSERT_HEAVY(OK());
 }
-
+/*
 template <typename PSET>
 template <typename Interval>
 Pointset_Powerset<PSET>::Pointset_Powerset(const Box<Interval>& box,
@@ -149,7 +149,8 @@ Pointset_Powerset<PSET>::Pointset_Powerset(const Box<Interval>& box,
   }
   PPL_ASSERT_HEAVY(OK());
 }
-
+*/
+/*
 template <typename PSET>
 template <typename T>
 Pointset_Powerset<PSET>::Pointset_Powerset(const Octagonal_Shape<T>& os,
@@ -161,7 +162,7 @@ Pointset_Powerset<PSET>::Pointset_Powerset(const Octagonal_Shape<T>& os,
   }
   PPL_ASSERT_HEAVY(OK());
 }
-
+*//*
 template <typename PSET>
 template <typename T>
 Pointset_Powerset<PSET>::Pointset_Powerset(const BD_Shape<T>& bds,
@@ -172,7 +173,7 @@ Pointset_Powerset<PSET>::Pointset_Powerset(const BD_Shape<T>& bds,
     x.sequence.push_back(Determinate<PSET>(PSET(bds)));
   }
   PPL_ASSERT_HEAVY(OK());
-}
+}*/
 
 template <typename PSET>
 inline

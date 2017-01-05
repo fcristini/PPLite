@@ -24,7 +24,9 @@ site: http://bugseng.com/products/ppl/ . */
 #ifndef PPL_Result_inlines_hh
 #define PPL_Result_inlines_hh 1
 
+#ifndef FABIO_NO_ASSERTS_HH
 #include "assertions.hh"
+#endif
 
 namespace Parma_Polyhedra_Library {
 

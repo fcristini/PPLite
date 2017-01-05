@@ -85,7 +85,7 @@ NNC_Polyhedron::NNC_Polyhedron(Generator_System& gs, Recycle_Input)
                                                   "space dimension"),
                Recycle_Input()) {
 }
-
+/*
 template <typename Interval>
 inline
 NNC_Polyhedron::NNC_Polyhedron(const Box<Interval>& box, Complexity_Class)
@@ -95,8 +95,8 @@ NNC_Polyhedron::NNC_Polyhedron(const Box<Interval>& box, Complexity_Class)
                                                   "the space dimension of box "
                                                   "exceeds the maximum allowed "
                                                   "space dimension")) {
-}
-
+}*/
+/*
 template <typename U>
 inline
 NNC_Polyhedron::NNC_Polyhedron(const BD_Shape<U>& bd, Complexity_Class)
@@ -110,7 +110,7 @@ NNC_Polyhedron::NNC_Polyhedron(const BD_Shape<U>& bd, Complexity_Class)
                UNIVERSE) {
   add_constraints(bd.constraints());
 }
-
+*//*
 template <typename U>
 inline
 NNC_Polyhedron::NNC_Polyhedron(const Octagonal_Shape<U>& os, Complexity_Class)
@@ -124,7 +124,7 @@ NNC_Polyhedron::NNC_Polyhedron(const Octagonal_Shape<U>& os, Complexity_Class)
                UNIVERSE) {
   add_constraints(os.constraints());
 }
-
+*/
 inline
 NNC_Polyhedron::NNC_Polyhedron(const NNC_Polyhedron& y, Complexity_Class)
   : Polyhedron(y) {

@@ -13,7 +13,7 @@ PURPOSE. */
 #ifndef PPL_Coefficient_types_hh
 #define PPL_Coefficient_types_hh 1
 
-#include "Checked_Number_defs.hh"
+/////#include "Checked_Number_defs.hh"
 
 #ifdef PPL_GMP_INTEGERS
 #include "GMP_Integer_types.hh"
@@ -104,10 +104,10 @@ struct Bounded_Integer_Coefficient_Policy {
   */
   static void handle_result(Result r);
 };
-
+/*
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for 8 bits checked integers.
-/*! \ingroup PPL_CXX_interface */
+/*! \ingroup PPL_CXX_interface *//*
 #endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
 template <typename Policy>
 struct Coefficient_traits_template<Checked_Number<int8_t, Policy> > {
@@ -117,7 +117,7 @@ struct Coefficient_traits_template<Checked_Number<int8_t, Policy> > {
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for 16 bits checked integers.
-/*! \ingroup PPL_CXX_interface */
+/*! \ingroup PPL_CXX_interface *//*
 #endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
 template <typename Policy>
 struct Coefficient_traits_template<Checked_Number<int16_t, Policy> > {
@@ -127,7 +127,7 @@ struct Coefficient_traits_template<Checked_Number<int16_t, Policy> > {
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for 32 bits checked integers.
-/*! \ingroup PPL_CXX_interface */
+/*! \ingroup PPL_CXX_interface *//*
 #endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
 template <typename Policy>
 struct Coefficient_traits_template<Checked_Number<int32_t, Policy> > {
@@ -137,14 +137,14 @@ struct Coefficient_traits_template<Checked_Number<int32_t, Policy> > {
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for 64 bits checked integers.
-/*! \ingroup PPL_CXX_interface */
+/*! \ingroup PPL_CXX_interface *//*
 #endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
 template <typename Policy>
 struct Coefficient_traits_template<Checked_Number<int64_t, Policy> > {
   //! The type used for references to const 64 bit checked integers.
   typedef const Checked_Number<int64_t, Policy>& const_reference;
 };
-
+*/
 } // namespace Parma_Polyhedra_Library
 
 #endif // defined(PPL_CHECKED_INTEGERS) || defined(PPL_NATIVE_INTEGERS)

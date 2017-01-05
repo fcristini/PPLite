@@ -25,6 +25,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "PIP_Tree_defs.hh"
 #include "PIP_Problem_defs.hh"
 #include <algorithm>
+#include <iomanip>
 #include <memory>
 #include <map>
 

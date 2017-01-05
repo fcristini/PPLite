@@ -28,9 +28,9 @@ site: http://bugseng.com/products/ppl/ . */
 #include "C_Polyhedron_defs.hh"
 #include "NNC_Polyhedron_defs.hh"
 #include "Grid_defs.hh"
-#include "Box_defs.hh"
-#include "BD_Shape_defs.hh"
-#include "Octagonal_Shape_defs.hh"
+/////#include "Box_defs.hh"
+/////#include "BD_Shape_defs.hh"
+/////#include "Octagonal_Shape_defs.hh"
 
 namespace Parma_Polyhedra_Library {
 
@@ -1154,7 +1154,7 @@ class WRAPPER_NAME : public Any_Pointset {                              \
   }                                                                     \
   explicit WRAPPER_NAME(const NNC_Polyhedron& y)                        \
     : x(y) {                                                            \
-  }                                                                     \
+  }/*                                                                   \
   template <typename U>                                                 \
   explicit WRAPPER_NAME(const Box<U>& y)                                \
     : x(y) {                                                            \
@@ -1166,7 +1166,7 @@ class WRAPPER_NAME : public Any_Pointset {                              \
   template <typename U>                                                 \
   explicit WRAPPER_NAME(const Octagonal_Shape<U>& y)                    \
     : x(y) {                                                            \
-  }                                                                     \
+  }*/                                                                   \
                                                                         \
   explicit WRAPPER_NAME(const Constraint_System& y)                     \
     : x(y) {                                                            \
@@ -1358,11 +1358,11 @@ namespace Parma_Polyhedra_Library {
 PPL_ANY_POINTSET_WRAPPER_CLASS(, C_Polyhedron_Pointset, C_Polyhedron)
 PPL_ANY_POINTSET_WRAPPER_CLASS(, NNC_Polyhedron_Pointset, NNC_Polyhedron)
 //PPL_ANY_POINTSET_WRAPPER_CLASS(, Grid_Pointset, Grid)
-
+/*
 PPL_ANY_POINTSET_WRAPPER_CLASS(template <typename T>, Box_Pointset, Box<T>)
 PPL_ANY_POINTSET_WRAPPER_CLASS(template <typename T>, BD_Shape_Pointset, BD_Shape<T>)
 PPL_ANY_POINTSET_WRAPPER_CLASS(template <typename T>, Octagonal_Shape_Pointset, Octagonal_Shape<T>)
-
+*/
 //C_Polyhedron_Pointset a(C_Polyhedron(3));
 //Octagonal_Shape_Pointset<double> b(C_Polyhedron(3));
 //BD_Shape_Pointset<double> c(C_Polyhedron(3));

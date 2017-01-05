@@ -25,7 +25,7 @@ site: http://bugseng.com/products/ppl/ . */
 #define PPL_Init_defs_hh 1
 
 #include "Init_types.hh"
-#include "fpu_types.hh"
+/////#include "fpu_types.hh"
 
 namespace Parma_Polyhedra_Library {
 
@@ -36,9 +36,9 @@ namespace Parma_Polyhedra_Library {
   This is performed automatically at initialization-time.  Calling
   this function is needed only if restore_pre_PPL_rounding() has been
   previously called.
-*/
+*//*
 void set_rounding_for_PPL();
-
+*/
 /*! \brief
   Sets the FPU rounding mode as it was before initialization of the PPL.
 
@@ -51,9 +51,9 @@ void set_rounding_for_PPL();
   set_rounding_for_PPL() before using any PPL abstractions based on
   floating point numbers.
   This is performed automatically at finalization-time.
-*/
+*//*
 void restore_pre_PPL_rounding();
-
+*/
 } // namespace Parma_Polyhedra_Library
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
@@ -88,10 +88,10 @@ private:
 
   //! Count the number of objects created.
   static unsigned int count;
-  static fpu_rounding_direction_type old_rounding_direction;
+/*  static fpu_rounding_direction_type old_rounding_direction;
 
   friend void set_rounding_for_PPL();
-  friend void restore_pre_PPL_rounding();
+  friend void restore_pre_PPL_rounding();*/
 };
 
 #include "Init_inlines.hh"

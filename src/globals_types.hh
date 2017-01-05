@@ -183,7 +183,7 @@ enum Representation {
   The parameters of each format are defined by a specific struct
   in file Float_defs.hh.  See the section on \ref floating_point
   "Analysis of floating point computations" for more information.
-*/
+*//*
 enum Floating_Point_Format {
   //! IEEE 754 half precision, 16 bits (5 exponent, 10 mantissa).
   IEEE754_HALF,
@@ -205,7 +205,7 @@ enum Floating_Point_Format {
 
   //! IBM double precision, 64 bits (7 exponent, 56 mantissa).
   IBM_DOUBLE
-};
+};*/
 
 struct Weightwatch_Traits;
 

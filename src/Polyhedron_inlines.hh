@@ -377,7 +377,7 @@ inline void
 Polyhedron::add_recycled_congruences(Congruence_System& cgs) {
   add_congruences(cgs);
 }
-
+/*
 template <typename FP_Format, typename Interval_Info>
 inline void
 Polyhedron::generalized_refine_with_linear_form_inequality(
@@ -409,7 +409,8 @@ Polyhedron::generalized_refine_with_linear_form_inequality(
     break;
   }
 }
-
+*/
+/*
 template <typename FP_Format, typename Interval_Info>
 inline void
 Polyhedron::
@@ -425,6 +426,7 @@ refine_fp_interval_abstract_store(
   store.intersection_assign(Box<FP_Interval_Type>(*this));
 
 }
+*/
 
 /*! \relates Polyhedron */
 inline bool

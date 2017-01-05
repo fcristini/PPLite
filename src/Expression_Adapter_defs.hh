@@ -29,6 +29,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "Variables_Set_types.hh"
 #include "Dense_Row_defs.hh"
 #include "Sparse_Row_defs.hh"
+#include <set>
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Adapters' base type (for template meta-programming).

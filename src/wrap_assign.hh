@@ -29,6 +29,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "Variable_defs.hh"
 #include "Constraint_System_defs.hh"
 #include "assertions.hh"
+#include "Checked_Compat_defs.hh"
 
 namespace Parma_Polyhedra_Library {
 

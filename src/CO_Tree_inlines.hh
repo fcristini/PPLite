@@ -24,7 +24,9 @@ site: http://bugseng.com/products/ppl/ . */
 #ifndef PPL_CO_Tree_inlines_hh
 #define PPL_CO_Tree_inlines_hh 1
 
+#include <iostream>
 #include <cstddef>
+#include "globals_defs.hh"
 
 namespace Parma_Polyhedra_Library {
 

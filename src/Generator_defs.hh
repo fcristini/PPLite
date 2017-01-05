@@ -38,8 +38,8 @@ site: http://bugseng.com/products/ppl/ . */
 
 #include "Variable_defs.hh"
 #include "Linear_Expression_defs.hh"
-#include "Checked_Number_defs.hh"
-#include "distances_defs.hh"
+/////#include "Checked_Number_defs.hh"
+/////#include "distances_defs.hh"
 #include "Topology_types.hh"
 #include "Expression_Hide_Last_defs.hh"
 #include "Expression_Hide_Inhomo_defs.hh"
@@ -834,13 +834,13 @@ bool operator!=(const Generator& x, const Generator& y);
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename To>
 bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                  const Generator& x,
                                  const Generator& y,
                                  Rounding_Dir dir);
-
+*/
 //! Computes the rectilinear (or Manhattan) distance between \p x and \p y.
 /*! \relates Generator
   If the rectilinear distance between \p x and \p y is defined,
@@ -855,13 +855,13 @@ bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename Temp, typename To>
 bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                  const Generator& x,
                                  const Generator& y,
                                  Rounding_Dir dir);
-
+*/
 //! Computes the rectilinear (or Manhattan) distance between \p x and \p y.
 /*! \relates Generator
   If the rectilinear distance between \p x and \p y is defined,
@@ -876,7 +876,7 @@ bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename Temp, typename To>
 bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                  const Generator& x,
@@ -885,7 +885,7 @@ bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                  Temp& tmp0,
                                  Temp& tmp1,
                                  Temp& tmp2);
-
+*/
 //! Computes the euclidean distance between \p x and \p y.
 /*! \relates Generator
   If the euclidean distance between \p x and \p y is defined,
@@ -900,13 +900,13 @@ bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename To>
 bool euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                const Generator& x,
                                const Generator& y,
                                Rounding_Dir dir);
-
+*/
 //! Computes the euclidean distance between \p x and \p y.
 /*! \relates Generator
   If the euclidean distance between \p x and \p y is defined,
@@ -921,13 +921,13 @@ bool euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename Temp, typename To>
 bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                  const Generator& x,
                                  const Generator& y,
                                  Rounding_Dir dir);
-
+*/
 //! Computes the euclidean distance between \p x and \p y.
 /*! \relates Generator
   If the euclidean distance between \p x and \p y is defined,
@@ -942,7 +942,7 @@ bool rectilinear_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename Temp, typename To>
 bool euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                const Generator& x,
@@ -951,7 +951,7 @@ bool euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                Temp& tmp0,
                                Temp& tmp1,
                                Temp& tmp2);
-
+*/
 //! Computes the \f$L_\infty\f$ distance between \p x and \p y.
 /*! \relates Generator
   If the \f$L_\infty\f$ distance between \p x and \p y is defined,
@@ -966,13 +966,13 @@ bool euclidean_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename To>
 bool l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                 const Generator& x,
                                 const Generator& y,
                                 Rounding_Dir dir);
-
+*/
 //! Computes the \f$L_\infty\f$ distance between \p x and \p y.
 /*! \relates Generator
   If the \f$L_\infty\f$ distance between \p x and \p y is defined,
@@ -987,13 +987,13 @@ bool l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename Temp, typename To>
 bool l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                 const Generator& x,
                                 const Generator& y,
                                 Rounding_Dir dir);
-
+*/
 //! Computes the \f$L_\infty\f$ distance between \p x and \p y.
 /*! \relates Generator
   If the \f$L_\infty\f$ distance between \p x and \p y is defined,
@@ -1008,7 +1008,7 @@ bool l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
   \note
   Distances are \e only defined between generators that are points and/or
   closure points; for rays or lines, \c false is returned.
-*/
+*//*
 template <typename Temp, typename To>
 bool l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                 const Generator& x,
@@ -1017,7 +1017,7 @@ bool l_infinity_distance_assign(Checked_Number<To, Extended_Number_Policy>& r,
                                 Temp& tmp0,
                                 Temp& tmp1,
                                 Temp& tmp2);
-
+*/
 namespace IO_Operators {
 
 //! Output operator.

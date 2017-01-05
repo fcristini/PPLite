@@ -31,6 +31,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "Scalar_Products_inlines.hh"
 #include "Temp_defs.hh"
 #include "math_utilities_defs.hh"
+#include "C_Integer.hh"
 
 #include <cstddef>
 #include <climits>

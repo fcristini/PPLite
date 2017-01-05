@@ -24,9 +24,9 @@ site: http://bugseng.com/products/ppl/ . */
 #include "ppl-config.h"
 #include "Init_defs.hh"
 #include "Variable_defs.hh"
-#include "fpu_defs.hh"
-#include "Rounding_Dir_defs.hh"
-#include "checked_defs.hh"
+/////#include "fpu_defs.hh"
+/////#include "Rounding_Dir_defs.hh"
+/////#include "checked_defs.hh"
 #include "Coefficient_defs.hh"
 #include "Linear_Expression_defs.hh"
 #include "Constraint_defs.hh"
@@ -44,9 +44,9 @@ site: http://bugseng.com/products/ppl/ . */
 namespace PPL = Parma_Polyhedra_Library;
 
 unsigned int PPL::Init::count = 0;
-
+/*
 PPL::fpu_rounding_direction_type PPL::Init::old_rounding_direction;
-
+*/
 extern "C" void
 ppl_set_GMP_memory_allocation_functions(void);
 
@@ -77,27 +77,27 @@ ppl_check_function() {
   }
   return r;
 }
-
+/*
 int
 ppl_setround_function(int rounding_mode) {
   return fesetround(rounding_mode);
 }
-
+*/
 } // namespace
 
 namespace Parma_Polyhedra_Library {
 
 namespace Implementation {
 
-int (* volatile ppl_check_function_p)() = ppl_check_function;
+int (* volatile ppl_check_function_p)() = ppl_check_function;/*
 int (* volatile ppl_setround_function_p)(int) = ppl_setround_function;
-
+*/
 } // namespace Implementation
 
 } // namespace Parma_Polyhedra_Library
 
 namespace {
-
+/*
 int
 ppl_test_rounding() {
   if ((*ppl_setround_function_p)(FE_DOWNWARD) != 0) {
@@ -124,7 +124,7 @@ ppl_test_rounding() {
 
   return (*ppl_check_function_p)();
 }
-
+*/
 } // namespace
 
 #endif // PPL_CAN_CONTROL_FPU
@@ -160,17 +160,18 @@ PPL::Init::Init() {
 #endif // PPL_HAVE_DECL_SETITIMER && PPL_HAVE_DECL_SIGACTION
 
 #if PPL_CAN_CONTROL_FPU
-
+/*
     // ... and the FPU rounding direction is set.
     fpu_initialize_control_functions();
     old_rounding_direction = fpu_get_rounding_direction();
     fpu_set_rounding_direction(round_fpu_dir(ROUND_DIRECT));
-
+*/
 #if defined(PPL_ARM_CAN_CONTROL_FPU) && PPL_ARM_CAN_CONTROL_FPU
-    if (ppl_test_rounding() != 0) {
+/*    if (ppl_test_rounding() != 0) {
       throw std::logic_error("PPL configuration error:"
                              " PPL_ARM_CAN_CONTROL_FPU evaluates to true,"
                              " but rounding does not work.");
+                             */
     }
 #endif // defined(PPL_ARM_CAN_CONTROL_FPU) && PPL_ARM_CAN_CONTROL_FPU
 
@@ -178,7 +179,7 @@ PPL::Init::Init() {
 
     // The default is chosen to have a precision greater than most
     // precise IEC 559 floating point (112 bits of mantissa).
-    set_irrational_precision(DEFAULT_IRRATIONAL_PRECISION);
+    /////set_irrational_precision(DEFAULT_IRRATIONAL_PRECISION);
   }
 }
 
@@ -187,7 +188,7 @@ PPL::Init::~Init() {
   if (--count == 0) {
 #if PPL_CAN_CONTROL_FPU
     // ... the FPU rounding direction is restored, ...
-    fpu_set_rounding_direction(old_rounding_direction);
+    /////fpu_set_rounding_direction(old_rounding_direction);
 #endif
 
 #if PPL_HAVE_DECL_SETITIMER && PPL_HAVE_DECL_SIGACTION
