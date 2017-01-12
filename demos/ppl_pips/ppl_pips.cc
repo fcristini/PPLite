@@ -61,6 +61,7 @@ typedef PPL::C_Polyhedron POLYHEDRON_TYPE;
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <fstream>
 #include <sstream>

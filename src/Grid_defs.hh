@@ -40,10 +40,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include "Poly_Con_Relation_defs.hh"
 #include "Poly_Gen_Relation_defs.hh"
 #include "Grid_Certificate_types.hh"
-/////#include "Box_types.hh"
 #include "Polyhedron_types.hh"
-/////#include "BD_Shape_types.hh"
-/////#include "Octagonal_Shape_types.hh"
 #include <vector>
 #include <iosfwd>
 
@@ -499,66 +496,6 @@ public:
   */
   Grid(Grid_Generator_System& ggs, Recycle_Input dummy);
 
-  //! Builds a grid out of a box.
-  /*!
-    The grid inherits the space dimension of the box.
-    The built grid is the most precise grid that includes the box.
-
-    \param box
-    The box representing the grid to be built.
-
-    \param complexity
-    This argument is ignored as the algorithm used has
-    polynomial complexity.
-
-    \exception std::length_error
-    Thrown if the space dimension of \p box exceeds the maximum
-    allowed space dimension.
-  *//*
-  template <typename Interval>
-  explicit Grid(const Box<Interval>& box,
-                Complexity_Class complexity = ANY_COMPLEXITY);
-*/
-  //! Builds a grid out of a bounded-difference shape.
-  /*!
-    The grid inherits the space dimension of the BDS.
-    The built grid is the most precise grid that includes the BDS.
-
-    \param bd
-    The BDS representing the grid to be built.
-
-    \param complexity
-    This argument is ignored as the algorithm used has
-    polynomial complexity.
-
-    \exception std::length_error
-    Thrown if the space dimension of \p bd exceeds the maximum
-    allowed space dimension.
-  *//*
-  template <typename U>
-  explicit Grid(const BD_Shape<U>& bd,
-                Complexity_Class complexity = ANY_COMPLEXITY);
-*/
-  //! Builds a grid out of an octagonal shape.
-  /*!
-    The grid inherits the space dimension of the octagonal shape.
-    The built grid is the most precise grid that includes the octagonal shape.
-
-    \param os
-    The octagonal shape representing the grid to be built.
-
-    \param complexity
-    This argument is ignored as the algorithm used has
-    polynomial complexity.
-
-    \exception std::length_error
-    Thrown if the space dimension of \p os exceeds the maximum
-    allowed space dimension.
-  *//*
-  template <typename U>
-  explicit Grid(const Octagonal_Shape<U>& os,
-                Complexity_Class complexity = ANY_COMPLEXITY);
-*/
   /*! \brief
     Builds a grid from a polyhedron using algorithms whose complexity
     does not exceed the one specified by \p complexity.
@@ -1924,8 +1861,6 @@ public:
   friend bool operator==(const Grid& x, const Grid& y);
 
   friend class Parma_Polyhedra_Library::Grid_Certificate;
-
-  /////template <typename Interval> friend class Parma_Polyhedra_Library::Box;
 
   //! \name Miscellaneous Member Functions
   //@{

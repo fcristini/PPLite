@@ -24,9 +24,6 @@ site: http://bugseng.com/products/ppl/ . */
 #ifndef PPL_Init_inlines_hh
 #define PPL_Init_inlines_hh 1
 
-/////#include "fpu_defs.hh"
-/////#include "Rounding_Dir_defs.hh"
-
 namespace Parma_Polyhedra_Library {
 /*
 inline void

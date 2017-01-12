@@ -85,46 +85,7 @@ NNC_Polyhedron::NNC_Polyhedron(Generator_System& gs, Recycle_Input)
                                                   "space dimension"),
                Recycle_Input()) {
 }
-/*
-template <typename Interval>
-inline
-NNC_Polyhedron::NNC_Polyhedron(const Box<Interval>& box, Complexity_Class)
-  : Polyhedron(NOT_NECESSARILY_CLOSED,
-               check_obj_space_dimension_overflow(box, NOT_NECESSARILY_CLOSED,
-                                                  "NNC_Polyhedron(box)",
-                                                  "the space dimension of box "
-                                                  "exceeds the maximum allowed "
-                                                  "space dimension")) {
-}*/
-/*
-template <typename U>
-inline
-NNC_Polyhedron::NNC_Polyhedron(const BD_Shape<U>& bd, Complexity_Class)
-  : Polyhedron(NOT_NECESSARILY_CLOSED,
-               check_space_dimension_overflow(bd.space_dimension(),
-                                              NOT_NECESSARILY_CLOSED,
-                                              "NNC_Polyhedron(bd)",
-                                              "the space dimension of bd "
-                                              "exceeds the maximum allowed "
-                                              "space dimension"),
-               UNIVERSE) {
-  add_constraints(bd.constraints());
-}
-*//*
-template <typename U>
-inline
-NNC_Polyhedron::NNC_Polyhedron(const Octagonal_Shape<U>& os, Complexity_Class)
-  : Polyhedron(NOT_NECESSARILY_CLOSED,
-               check_space_dimension_overflow(os.space_dimension(),
-                                              NOT_NECESSARILY_CLOSED,
-                                              "NNC_Polyhedron(os)",
-                                              "the space dimension of os "
-                                              "exceeds the maximum allowed "
-                                              "space dimension"),
-               UNIVERSE) {
-  add_constraints(os.constraints());
-}
-*/
+
 inline
 NNC_Polyhedron::NNC_Polyhedron(const NNC_Polyhedron& y, Complexity_Class)
   : Polyhedron(y) {

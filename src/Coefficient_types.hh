@@ -13,8 +13,6 @@ PURPOSE. */
 #ifndef PPL_Coefficient_types_hh
 #define PPL_Coefficient_types_hh 1
 
-/////#include "Checked_Number_defs.hh"
-
 #ifdef PPL_GMP_INTEGERS
 #include "GMP_Integer_types.hh"
 #endif
@@ -104,47 +102,7 @@ struct Bounded_Integer_Coefficient_Policy {
   */
   static void handle_result(Result r);
 };
-/*
-#ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
-//! Coefficient traits specialization for 8 bits checked integers.
-/*! \ingroup PPL_CXX_interface *//*
-#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
-template <typename Policy>
-struct Coefficient_traits_template<Checked_Number<int8_t, Policy> > {
-  //! The type used for references to const 8 bit checked integers.
-  typedef Checked_Number<int8_t, Policy> const_reference;
-};
 
-#ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
-//! Coefficient traits specialization for 16 bits checked integers.
-/*! \ingroup PPL_CXX_interface *//*
-#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
-template <typename Policy>
-struct Coefficient_traits_template<Checked_Number<int16_t, Policy> > {
-  //! The type used for references to const 16 bit checked integers.
-  typedef Checked_Number<int16_t, Policy> const_reference;
-};
-
-#ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
-//! Coefficient traits specialization for 32 bits checked integers.
-/*! \ingroup PPL_CXX_interface *//*
-#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
-template <typename Policy>
-struct Coefficient_traits_template<Checked_Number<int32_t, Policy> > {
-  //! The type used for references to const 32 bit checked integers.
-  typedef Checked_Number<int32_t, Policy> const_reference;
-};
-
-#ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
-//! Coefficient traits specialization for 64 bits checked integers.
-/*! \ingroup PPL_CXX_interface *//*
-#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
-template <typename Policy>
-struct Coefficient_traits_template<Checked_Number<int64_t, Policy> > {
-  //! The type used for references to const 64 bit checked integers.
-  typedef const Checked_Number<int64_t, Policy>& const_reference;
-};
-*/
 } // namespace Parma_Polyhedra_Library
 
 #endif // defined(PPL_CHECKED_INTEGERS) || defined(PPL_NATIVE_INTEGERS)
@@ -161,13 +119,6 @@ namespace Parma_Polyhedra_Library {
     - The GMP_Integer type, which in turn is an alias for the
       <CODE>mpz_class</CODE> type implemented by the C++ interface
       of the GMP library (this is the default configuration).
-    - An instance of the Checked_Number class template: with the policy
-      Bounded_Integer_Coefficient_Policy, this implements overflow
-      detection on top of a native integral type (available template
-      instances include checked integers having 8, 16, 32 or 64 bits);
-      with the Checked_Number_Transparent_Policy, this is a wrapper
-      for native integral types with no overflow detection
-      (available template instances are as above).
 */
 typedef PPL_COEFFICIENT_TYPE Coefficient;
 

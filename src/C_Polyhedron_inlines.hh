@@ -86,46 +86,7 @@ C_Polyhedron::C_Polyhedron(Generator_System& gs, Recycle_Input)
                                                   "space dimension"),
                Recycle_Input()) {
 }
-/*
-template <typename Interval>
-inline
-C_Polyhedron::C_Polyhedron(const Box<Interval>& box, Complexity_Class)
-  : Polyhedron(NECESSARILY_CLOSED,
-               check_obj_space_dimension_overflow(box, NECESSARILY_CLOSED,
-                                                  "C_Polyhedron(box)",
-                                                  "the space dimension of box "
-                                                  "exceeds the maximum allowed "
-                                                  "space dimension")) {
-}
-*//*
-template <typename U>
-inline
-C_Polyhedron::C_Polyhedron(const BD_Shape<U>& bd, Complexity_Class)
-  : Polyhedron(NECESSARILY_CLOSED,
-               check_space_dimension_overflow(bd.space_dimension(),
-                                              NECESSARILY_CLOSED,
-                                              "C_Polyhedron(bd)",
-                                              "the space dimension of bd "
-                                              "exceeds the maximum allowed "
-                                              "space dimension"),
-               UNIVERSE) {
-  add_constraints(bd.constraints());
-}
-*//*
-template <typename U>
-inline
-C_Polyhedron::C_Polyhedron(const Octagonal_Shape<U>& os, Complexity_Class)
-  : Polyhedron(NECESSARILY_CLOSED,
-               check_space_dimension_overflow(os.space_dimension(),
-                                              NECESSARILY_CLOSED,
-                                              "C_Polyhedron(os)",
-                                              "the space dimension of os "
-                                              "exceeds the maximum allowed "
-                                              "space dimension"),
-               UNIVERSE) {
-  add_constraints(os.constraints());
-}
-*/
+
 inline
 C_Polyhedron::C_Polyhedron(const C_Polyhedron& y, Complexity_Class)
   : Polyhedron(y) {

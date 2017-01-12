@@ -26,10 +26,6 @@ site: http://bugseng.com/products/ppl/ . */
 
 #include "Generator_defs.hh"
 #include "MIP_Problem_defs.hh"
-/////#include "Interval_defs.hh"
-/////#include "Linear_Form_defs.hh"
-// For static method overflows.
-/////#include "Floating_Point_Expression_defs.hh"
 #include <algorithm>
 #include <deque>
 

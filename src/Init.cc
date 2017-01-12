@@ -24,9 +24,6 @@ site: http://bugseng.com/products/ppl/ . */
 #include "ppl-config.h"
 #include "Init_defs.hh"
 #include "Variable_defs.hh"
-/////#include "fpu_defs.hh"
-/////#include "Rounding_Dir_defs.hh"
-/////#include "checked_defs.hh"
 #include "Coefficient_defs.hh"
 #include "Linear_Expression_defs.hh"
 #include "Constraint_defs.hh"
@@ -159,24 +156,6 @@ PPL::Init::Init() {
     Watchdog::Watchdog::initialize();
 #endif // PPL_HAVE_DECL_SETITIMER && PPL_HAVE_DECL_SIGACTION
 
-#if PPL_CAN_CONTROL_FPU
-/*
-    // ... and the FPU rounding direction is set.
-    fpu_initialize_control_functions();
-    old_rounding_direction = fpu_get_rounding_direction();
-    fpu_set_rounding_direction(round_fpu_dir(ROUND_DIRECT));
-*/
-#if defined(PPL_ARM_CAN_CONTROL_FPU) && PPL_ARM_CAN_CONTROL_FPU
-/*    if (ppl_test_rounding() != 0) {
-      throw std::logic_error("PPL configuration error:"
-                             " PPL_ARM_CAN_CONTROL_FPU evaluates to true,"
-                             " but rounding does not work.");
-                             */
-    }
-#endif // defined(PPL_ARM_CAN_CONTROL_FPU) && PPL_ARM_CAN_CONTROL_FPU
-
-#endif // PPL_CAN_CONTROL_FPU
-
     // The default is chosen to have a precision greater than most
     // precise IEC 559 floating point (112 bits of mantissa).
     /////set_irrational_precision(DEFAULT_IRRATIONAL_PRECISION);
@@ -186,10 +165,6 @@ PPL::Init::Init() {
 PPL::Init::~Init() {
   // Only when the last Init object is destroyed...
   if (--count == 0) {
-#if PPL_CAN_CONTROL_FPU
-    // ... the FPU rounding direction is restored, ...
-    /////fpu_set_rounding_direction(old_rounding_direction);
-#endif
 
 #if PPL_HAVE_DECL_SETITIMER && PPL_HAVE_DECL_SIGACTION
     // ... the Watchdog subsystem is finalized, ...

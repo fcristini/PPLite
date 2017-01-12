@@ -137,43 +137,6 @@ Pointset_Powerset<PSET>
   x.reduced = false;
   PPL_ASSERT_HEAVY(OK());
 }
-/*
-template <typename PSET>
-template <typename Interval>
-Pointset_Powerset<PSET>::Pointset_Powerset(const Box<Interval>& box,
-                                           Complexity_Class)
-  : Base(), space_dim(box.space_dimension()) {
-  Pointset_Powerset& x = *this;
-  if (!box.is_empty()) {
-    x.sequence.push_back(Determinate<PSET>(PSET(box)));
-  }
-  PPL_ASSERT_HEAVY(OK());
-}
-*/
-/*
-template <typename PSET>
-template <typename T>
-Pointset_Powerset<PSET>::Pointset_Powerset(const Octagonal_Shape<T>& os,
-                                           Complexity_Class)
-  : Base(), space_dim(os.space_dimension()) {
-  Pointset_Powerset& x = *this;
-  if (!os.is_empty()) {
-    x.sequence.push_back(Determinate<PSET>(PSET(os)));
-  }
-  PPL_ASSERT_HEAVY(OK());
-}
-*//*
-template <typename PSET>
-template <typename T>
-Pointset_Powerset<PSET>::Pointset_Powerset(const BD_Shape<T>& bds,
-                                           Complexity_Class)
-  : Base(), space_dim(bds.space_dimension()) {
-  Pointset_Powerset& x = *this;
-  if (!bds.is_empty()) {
-    x.sequence.push_back(Determinate<PSET>(PSET(bds)));
-  }
-  PPL_ASSERT_HEAVY(OK());
-}*/
 
 template <typename PSET>
 inline

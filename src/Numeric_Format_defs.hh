@@ -24,9 +24,6 @@ site: http://bugseng.com/products/ppl/ . */
 #ifndef PPL_Numeric_Format_defs_hh
 #define PPL_Numeric_Format_defs_hh 1
 
-/////#include "Result_defs.hh"
-/////#include "fpu_defs.hh"
-
 namespace Parma_Polyhedra_Library {
 
 class Numeric_Format {

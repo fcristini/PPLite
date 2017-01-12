@@ -43,9 +43,6 @@ site: http://bugseng.com/products/ppl/ . */
 #include "C_Polyhedron_types.hh"
 #include "NNC_Polyhedron_types.hh"
 #include "Grid_types.hh"
-/////#include "Box_types.hh"
-/////#include "BD_Shape_types.hh"
-/////#include "Octagonal_Shape_types.hh"
 
 namespace Parma_Polyhedra_Library {
 
@@ -311,8 +308,6 @@ public:
   <CODE>C_Polyhedron</CODE>,
   <CODE>NNC_Polyhedron</CODE>,
   <CODE>Grid</CODE>,
-  <CODE>Octagonal_Shape\<T\></CODE>,
-  <CODE>BD_Shape\<T\></CODE>,
   <CODE>Box\<T\></CODE>.
 
   An object of the class <CODE>Partially_Reduced_Product\<D1, D2, R\></CODE>
@@ -554,63 +549,6 @@ public:
   Partially_Reduced_Product(const Grid& gr,
                             Complexity_Class complexity = ANY_COMPLEXITY);
 
-  //! Builds a product out of a box.
-  /*!
-    Builds a product containing \p box.
-    The product inherits the space dimension of the box.
-
-    \param box
-    The box representing the pair to be built.
-
-    \param complexity
-    The complexity is ignored.
-
-    \exception std::length_error
-    Thrown if the space dimension of \p box exceeds the maximum
-    allowed space dimension.
-  *//*
-  template <typename Interval>
-  Partially_Reduced_Product(const Box<Interval>& box,
-                            Complexity_Class complexity = ANY_COMPLEXITY);
-*/
-  //! Builds a product out of a BD shape.
-  /*!
-    Builds a product containing \p bd.
-    The product inherits the space dimension of the BD shape.
-
-    \param bd
-    The BD shape representing the product to be built.
-
-    \param complexity
-    The complexity is ignored.
-
-    \exception std::length_error
-    Thrown if the space dimension of \p bd exceeds the maximum
-    allowed space dimension.
-  *//*
-  template <typename U>
-  Partially_Reduced_Product(const BD_Shape<U>& bd,
-                            Complexity_Class complexity = ANY_COMPLEXITY);
-*/
-  //! Builds a product out of an octagonal shape.
-  /*!
-    Builds a product containing \p os.
-    The product inherits the space dimension of the octagonal shape.
-
-    \param os
-    The octagonal shape representing the product to be built.
-
-    \param complexity
-    The complexity is ignored.
-
-    \exception std::length_error
-    Thrown if the space dimension of \p os exceeds the maximum
-    allowed space dimension.
-  *//*
-  template <typename U>
-  Partially_Reduced_Product(const Octagonal_Shape<U>& os,
-                            Complexity_Class complexity = ANY_COMPLEXITY);
-*/
   //! Ordinary copy constructor.
   Partially_Reduced_Product(const Partially_Reduced_Product& y,
                             Complexity_Class complexity = ANY_COMPLEXITY);
