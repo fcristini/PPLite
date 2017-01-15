@@ -1,3 +1,4 @@
+/* Functions for compatibility between PPL and PPLite */
 
 #ifndef PPL_Checked_Compat_defs_hh
 #define PPL_Checked_Compat_defs_hh 1
