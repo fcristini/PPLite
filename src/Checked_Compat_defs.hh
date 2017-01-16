@@ -18,16 +18,16 @@
 namespace Parma_Polyhedra_Library {
 
 template <typename To, typename From> inline
-Parma_Polyhedra_Library::Result assign_r(To to, From from, Parma_Polyhedra_Library::Rounding_Dir rd);
+Result assign_r(To & to, From from, Rounding_Dir rd);
 
 template <typename To, typename Num, typename Den> inline
-Parma_Polyhedra_Library::Result div_assign_r(To to, Num num, Den den, Parma_Polyhedra_Library::Rounding_Dir rd);
+Result div_assign_r(To & to, Num num, Den den, Rounding_Dir rd);
 
 template <typename To, typename Num, typename Pow> inline
-Parma_Polyhedra_Library::Result div_2exp_assign_r(To to, Num num, Pow pow, Parma_Polyhedra_Library::Rounding_Dir rd);
+Result div_2exp_assign_r(To & to, Num num, Pow pow, Rounding_Dir rd);
 
 template <typename To, typename Fac1, typename Fac2> inline
-Parma_Polyhedra_Library::Result mul_assign_r(To to, Fac1 fac1, Fac2 fac2, Parma_Polyhedra_Library::Rounding_Dir rd);
+Result mul_assign_r(To & to, Fac1 fac1, Fac2 fac2, Rounding_Dir rd);
 
 } // namespace Parma_Polyhedra_Library
 

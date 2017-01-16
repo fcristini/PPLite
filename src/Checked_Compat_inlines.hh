@@ -1,46 +1,54 @@
 
-#include "ppl-config.h"
+#ifndef PPL_Checked_Compat_inlines_hh
+#define PPL_Checked_Compat_inlines_hh 1
 
 namespace Parma_Polyhedra_Library {
 
 template <typename To, typename From>
 inline
-Parma_Polyhedra_Library::Result assign_r(To to, From from, Parma_Polyhedra_Library::Rounding_Dir rd)
+Result assign_r(To & to, From from, Rounding_Dir)
 {
+    /////std::cout << "Passed in assign_r" << std::endl;
     to = from;
-    return Parma_Polyhedra_Library::Result::V_EQ;
+    return Result::V_EQ;
 }
 
 template <>
 inline
-Parma_Polyhedra_Library::Result assign_r<unsigned int, Parma_Polyhedra_Library::GMP_Integer>(unsigned int to, Parma_Polyhedra_Library::GMP_Integer from, Parma_Polyhedra_Library::Rounding_Dir rd)
+Result assign_r<unsigned int, GMP_Integer>(unsigned int & to, GMP_Integer from, Rounding_Dir)
 {
+    /////std::cout << "Passed in assign_r(GMP)" << std::endl;
     to = from.get_ui();
-    return Parma_Polyhedra_Library::Result::V_EQ;
+    return Result::V_EQ;
 }
 
 template <typename To, typename Num, typename Den>
 inline
-Parma_Polyhedra_Library::Result div_assign_r(To to, Num num, Den den, Parma_Polyhedra_Library::Rounding_Dir rd)
+Result div_assign_r(To & to, Num num, Den den, Rounding_Dir)
 {
+    /////std::cout << "Passed in div_assign_r" << std::endl;
     to = num / den;
-    return Parma_Polyhedra_Library::Result::V_EQ;
+    return Result::V_EQ;
 }
 
 template <typename To, typename Num, typename Pow>
 inline
-Parma_Polyhedra_Library::Result div_2exp_assign_r(To to, Num num, Pow pow, Parma_Polyhedra_Library::Rounding_Dir rd)
+Result div_2exp_assign_r(To & to, Num num, Pow pow, Rounding_Dir)
 {
+    /////std::cout << "Passed in div_2exp_assign_r" << std::endl;
     to = num >> pow;
-    return Parma_Polyhedra_Library::Result::V_EQ;
+    return Result::V_EQ;
 }
 
 template <typename To, typename Fac1, typename Fac2>
 inline
-Parma_Polyhedra_Library::Result mul_assign_r(To to, Fac1 fac1, Fac2 fac2, Parma_Polyhedra_Library::Rounding_Dir rd)
+Result mul_assign_r(To & to, Fac1 fac1, Fac2 fac2, Rounding_Dir)
 {
+    /////std::cout << "Passed in mul_assign_r" << std::endl;
     to = fac1 * fac2;
-    return Parma_Polyhedra_Library::Result::V_EQ;
+    return Result::V_EQ;
 }
 
 } // namespace Parma_Polyhedra_Library
+
+#endif // !defined(PPL_Checked_Compat_inlines_hh)
