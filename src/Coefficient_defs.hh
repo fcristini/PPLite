@@ -24,11 +24,14 @@ site: http://bugseng.com/products/ppl/ . */
 #ifndef PPL_Coefficient_defs_hh
 #define PPL_Coefficient_defs_hh 1
 
+#include "Flint_mpz_class.hh"
 #include "Coefficient_types.hh"
 
-#ifdef PPL_GMP_INTEGERS
-#include "GMP_Integer_defs.hh"
-#endif
+#include "FLINT_Integer_defs.hh"
+
+/////#ifdef PPL_GMP_INTEGERS
+/////#include "GMP_Integer_defs.hh"
+/////#endif
 
 #include <iosfwd>
 

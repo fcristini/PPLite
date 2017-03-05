@@ -13,9 +13,8 @@ PURPOSE. */
 #ifndef PPL_Coefficient_types_hh
 #define PPL_Coefficient_types_hh 1
 
-#ifdef PPL_GMP_INTEGERS
-#include "GMP_Integer_types.hh"
-#endif
+#include "Flint_mpz_class.hh"
+#include "Coefficient_traits_template.hh"
 
 #if defined(PPL_CHECKED_INTEGERS) || defined(PPL_NATIVE_INTEGERS)
 
@@ -120,7 +119,17 @@ namespace Parma_Polyhedra_Library {
       <CODE>mpz_class</CODE> type implemented by the C++ interface
       of the GMP library (this is the default configuration).
 */
-typedef PPL_COEFFICIENT_TYPE Coefficient;
+//////typedef PPL_COEFFICIENT_TYPE Coefficient;
+
+#ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
+//! Coefficient traits specialization for unbounded integers.
+/*! \ingroup PPL_CXX_interface */
+#endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
+template <>
+struct Coefficient_traits_template<flint_mpz_class> {
+  //! The type used for references to const unbounded integers.
+  typedef const flint_mpz_class& const_reference;
+};
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! An alias for easily naming the coefficient traits.

@@ -115,6 +115,17 @@ total_memory_in_bytes(const T&) {
 }
 
 inline memory_size_type
+external_memory_in_bytes(const flint_mpz_class& x) {
+  return static_cast<memory_size_type>(fmpz_size(x.mp)
+    * sizeof(mp_limb_t));
+}
+
+inline memory_size_type
+total_memory_in_bytes(const flint_mpz_class& x) {
+  return sizeof(x) + external_memory_in_bytes(x);
+}
+
+inline memory_size_type
 external_memory_in_bytes(const mpz_class& x) {
   return static_cast<memory_size_type>(x.get_mpz_t()[0]._mp_alloc)
     * PPL_SIZEOF_MP_LIMB_T;

@@ -996,6 +996,11 @@ assign(double& d, const mpz_class& c) {
   d = c.get_d();
 }
 
+inline void
+assign(double& d, const flint_mpz_class& c) {
+  d = c.get_d();
+}
+
 } // namespace
 
 PPL::dimension_type

@@ -316,7 +316,7 @@ column_lower(const Matrix<PIP_Tree_Node::Row>& tableau,
           continue;
         }
         else {
-          return 0 > rhs_coeff;
+          return rhs_coeff < 0;
         }
       }
       // Optimizing for: lhs == 0 && rhs == 0;

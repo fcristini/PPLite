@@ -32,6 +32,7 @@ site: http://bugseng.com/products/ppl/ . */
 #include <exception>
 #include <iostream>
 #include <gmpxx.h>
+#include "Flint_mpz_class.hh"
 
 #ifndef PPL_PROFILE_ADD_WEIGHT
 #define PPL_PROFILE_ADD_WEIGHT 0

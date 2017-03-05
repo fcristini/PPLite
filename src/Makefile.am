@@ -111,11 +111,14 @@ endif USE_CHECKED_INTEGERS
 if USE_GMP_INTEGERS
 
 COEFFICIENT_TYPES_INCLUDE_FILES = \
-  GMP_Integer_types.hh
+  GMP_Integer_types.hh \
+  Flint_mpz_class.hh
 
 COEFFICIENT_DEFS_INCLUDE_FILES = \
   GMP_Integer_defs.hh \
-  GMP_Integer_inlines.hh
+  GMP_Integer_inlines.hh \
+  FLINT_Integer_defs.hh \
+  FLINT_Integer_inlines.hh
 
 endif USE_GMP_INTEGERS
 
@@ -433,6 +436,7 @@ endif NO_UNDEFINED
 libppl_la_LIBADD = @extra_libraries@
 
 libppl_la_LDFLAGS = \
+-lflint -libflint.so \
 $(NO_UNDEFINED_FLAG) \
 -version-info $(LIBPPL_LT_CURRENT):$(LIBPPL_LT_REVISION):$(LIBPPL_LT_AGE)
 

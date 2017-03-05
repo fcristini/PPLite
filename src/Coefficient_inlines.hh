@@ -63,7 +63,7 @@ Coefficient_zero() {
 inline Coefficient_traits::const_reference
 Coefficient_one() {
   extern const Coefficient* Coefficient_one_p;
-  PPL_ASSERT(*Coefficient_one_p != 0);
+  PPL_ASSERT((*Coefficient_one_p) != 0);
   return *Coefficient_one_p;
 }
 #endif // PPL_GMP_INTEGERS
