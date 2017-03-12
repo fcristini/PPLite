@@ -21,8 +21,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02111-1307, USA.
 For the most up-to-date information see the Parma Polyhedra Library
 site: http://bugseng.com/products/ppl/ . */
 
-#ifndef PPL_GMP_Integer_defs_hh
-#define PPL_GMP_Integer_defs_hh 1
+#ifndef PPL_FLINT_Integer_defs_hh
+#define PPL_FLINT_Integer_defs_hh 1
 
 #include "globals_types.hh"
 #include <cstddef>
@@ -146,4 +146,4 @@ void swap(flint_mpz_class & x, flint_mpz_class & y);
 #include "FLINT_Integer_inlines.hh"
 #endif
 
-#endif // !defined(PPL_GMP_Integer_defs_hh)
+#endif // !defined(PPL_FLINT_Integer_defs_hh)

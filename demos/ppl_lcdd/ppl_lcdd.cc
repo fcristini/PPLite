@@ -505,7 +505,7 @@ maybe_print_clock() {
 
 void
 normalize(const std::vector<mpq_class>& source,
-          std::vector<mpz_class>& dest,
+          std::vector<PPL::Coefficient>& dest,
           mpz_class& denominator) {
   typedef std::vector<mpq_class>::size_type size_type;
   const size_type n = source.size();
@@ -567,9 +567,9 @@ enum Number_Type { INTEGER, RATIONAL, REAL };
 void
 read_coefficients(std::istream& in,
                   const Number_Type number_type,
-                  std::vector<mpz_class>& coefficients,
-                  mpz_class& denominator) {
-  typedef std::vector<mpz_class>::size_type size_type;
+                  std::vector<PPL::Coefficient>& coefficients,
+                  PPL::Coefficient& denominator) {
+  typedef std::vector<PPL::Coefficient>::size_type size_type;
   const size_type num_coefficients = coefficients.size();
   switch (number_type) {
   case INTEGER:
@@ -590,7 +590,9 @@ read_coefficients(std::istream& in,
           error("missing or invalid rational coefficient");
         }
       }
-      normalize(rational_coefficients, coefficients, denominator);
+      mpz_class denom;
+      normalize(rational_coefficients, coefficients, denom);
+      denominator = denom;
       break;
     }
   case REAL:
@@ -603,7 +605,9 @@ read_coefficients(std::istream& in,
         }
         rational_coefficients[i] = mpq_class(d);
       }
-      normalize(rational_coefficients, coefficients, denominator);
+      mpz_class denom;
+      normalize(rational_coefficients, coefficients, denom);
+      denominator = denom;
       break;
     }
   }
@@ -744,8 +748,8 @@ read_polyhedron(std::istream& in, POLYHEDRON_TYPE& ph) {
   const std::set<unsigned>::iterator linearity_end = linearity.end();
   if (rep == V) {
     // The V representation allows for `space_dim' coordinates.
-    std::vector<mpz_class> coefficients(space_dim);
-    mpz_class denominator;
+    std::vector<PPL::Coefficient> coefficients(space_dim);
+    PPL::Coefficient denominator;
     bool has_a_point = false;
     for (row = 0; !has_num_rows || row < num_rows; ++row) {
       int vertex_marker;
@@ -880,8 +884,8 @@ read_polyhedron(std::istream& in, POLYHEDRON_TYPE& ph) {
     assert(rep == H);
     // The H representation stores the inhomogeneous term at index 0,
     // and the variables' coefficients at indices 1, 2, ..., space_dim.
-    std::vector<mpz_class> coefficients(space_dim+1);
-    mpz_class denominator;
+    std::vector<PPL::Coefficient> coefficients(space_dim+1);
+    PPL::Coefficient denominator;
     for (row = 0; !has_num_rows || row < num_rows; ++row) {
       if (!has_num_rows) {
         // Must be prepared to read an "end" here.
@@ -1125,13 +1129,15 @@ write_polyhedron(std::ostream& out,
             guarded_write(out, '0');
           }
           else {
-            mpz_class numer;
-            mpz_class denom;
+            PPL::Coefficient numer;
+            PPL::Coefficient denom;
             PPL::assign_r(numer,
                         g.coefficient(PPL::Variable(j)),
                         PPL::ROUND_NOT_NEEDED);
             PPL::assign_r(denom, divisor, PPL::ROUND_NOT_NEEDED);
-            guarded_write(out, mpq_class(numer, denom));
+            mpz_class numerator(numer.get_str());
+            mpz_class denominator(denom.get_str());
+            guarded_write(out, mpq_class(numerator, denominator));
           }
         }
       }

@@ -124,6 +124,7 @@ public:
   flint_mpz_class & operator=(unsigned long l) { assign_ui(l); return *this; }
   flint_mpz_class & operator=(double d) { assign_d(d); return *this; }
   flint_mpz_class & operator=(const mpz_class & z) { *this = z.get_str(); return *this; }
+  flint_mpz_class & operator=(const mpq_class & z) { *this = z.get_str(); return *this; }
   flint_mpz_class & operator=(const char *s) {
     if (set_str (s, 0) != 0) {
       ///throw std::invalid_argument ("fmpz_set_str");
