@@ -53,7 +53,7 @@ then
   gmp_library_options="-L$gmp_library_paths"
 fi
 
-gmp_libs="-lgmpxx -lgmp"
+gmp_libs="-lflint -lgmpxx -lgmp"
 
 AC_ARG_WITH(gmp-build,
   AS_HELP_STRING([--with-gmp-build=DIR],

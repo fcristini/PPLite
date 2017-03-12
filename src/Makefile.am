@@ -436,7 +436,7 @@ endif NO_UNDEFINED
 libppl_la_LIBADD = @extra_libraries@
 
 libppl_la_LDFLAGS = \
--lflint -libflint.so \
+-lflint \
 $(NO_UNDEFINED_FLAG) \
 -version-info $(LIBPPL_LT_CURRENT):$(LIBPPL_LT_REVISION):$(LIBPPL_LT_AGE)
 
