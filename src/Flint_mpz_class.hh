@@ -20,8 +20,11 @@ public:
   flint_mpz_class() {
     fmpz_init(mp);
   }
-  flint_mpz_class(int l) { 
+  flint_mpz_class(signed int l) { 
     init_si(l);
+  }
+  flint_mpz_class(unsigned int l) { 
+    init_ui(l);
   }
   flint_mpz_class(signed long l) { 
     init_si(l);

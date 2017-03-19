@@ -70,8 +70,6 @@ bhz03widening1 \
 bounded1 \
 boundedaffineimage1 \
 boundedaffinepreimage1 \
-boundedbhrz03extrapolation1 \
-boundedh79extrapolation1 \
 bounds1 \
 cnncconversion1 \
 concatenate1 \
@@ -89,10 +87,7 @@ exceptions1 exceptions2  exceptions3 \
 expandspacedim1 expandspacedim2 \
 foldspacedims1 foldspacedims2 \
 frequency1 \
-frombdshape1 \
-frombox1 frombox2 \
 fromgrid1 \
-fromoctagonalshape1 \
 generalizedaffineimage1 generalizedaffineimage2 \
 generalizedaffinepreimage1 generalizedaffinepreimage2 \
 generators1 \
@@ -117,13 +112,11 @@ minconstraints1 minconstraints2 \
 mingenerators1 mingenerators2 \
 nncminimize1 nncminimize2 \
 nncpostimeelapse1 \
-numberinput1 \
 onepoint \
 permute \
 polydifference1 polydifference2 \
 polyhull1 polyhull2 \
 polyhullifexact1 polyhullifexact2 \
-randphull1 \
 refinewithcongruence1 \
 refinewithcongruences1 \
 refinewithconstraint1 \
@@ -167,8 +160,6 @@ nnc_bhrz03widening1 nnc_bhrz03widening2 \
 nnc_bounded1 \
 nnc_boundedaffineimage1 \
 nnc_boundedaffinepreimage1 \
-nnc_boundedbhrz03extrapolation1 \
-nnc_boundedh79extrapolation1 \
 nnc_bounds1 \
 nnc_concatenate1 \
 nnc_congruences1 \
@@ -183,10 +174,7 @@ nnc_equals1 \
 nnc_exceptions1 nnc_exceptions3 \
 nnc_expandspacedim1 \
 nnc_foldspacedims1 \
-nnc_frombdshape1 \
-nnc_frombox1 \
 nnc_fromgrid1 \
-nnc_fromoctagonalshape1 \
 nnc_generalizedaffineimage1 \
 nnc_generalizedaffinepreimage1 \
 nnc_generators1 \
@@ -208,7 +196,6 @@ nnc_permute \
 nnc_polydifference1 \
 nnc_polyhull1 \
 nnc_polyhullifexact1 \
-nnc_randphull1 \
 nnc_relations1 nnc_relations2 \
 nnc_removespacedims1 \
 nnc_smm1 \
@@ -269,10 +256,6 @@ boundedaffineimage1_SOURCES = boundedaffineimage1.cc
 
 boundedaffinepreimage1_SOURCES = boundedaffinepreimage1.cc
 
-boundedbhrz03extrapolation1_SOURCES = boundedbhrz03extrapolation1.cc
-
-boundedh79extrapolation1_SOURCES = boundedh79extrapolation1.cc
-
 bounds1_SOURCES = bounds1.cc
 
 cnncconversion1_SOURCES = cnncconversion1.cc
@@ -314,14 +297,7 @@ foldspacedims2_SOURCES = foldspacedims2.cc
 
 frequency1_SOURCES = frequency1.cc
 
-frombdshape1_SOURCES = frombdshape1.cc
-
-frombox1_SOURCES = frombox1.cc
-frombox2_SOURCES = frombox2.cc
-
 fromgrid1_SOURCES = fromgrid1.cc
-
-fromoctagonalshape1_SOURCES = fromoctagonalshape1.cc
 
 generalizedaffineimage1_SOURCES = generalizedaffineimage1.cc
 generalizedaffineimage2_SOURCES = generalizedaffineimage2.cc
@@ -376,8 +352,6 @@ minconstraints2_SOURCES = minconstraints2.cc
 mingenerators1_SOURCES = mingenerators1.cc
 mingenerators2_SOURCES = mingenerators2.cc
 
-numberinput1_SOURCES = numberinput1.cc
-
 nncminimize1_SOURCES = nncminimize1.cc
 nncminimize2_SOURCES = nncminimize2.cc
 
@@ -395,8 +369,6 @@ polyhull2_SOURCES = polyhull2.cc
 
 polyhullifexact1_SOURCES = polyhullifexact1.cc
 polyhullifexact2_SOURCES = polyhullifexact2.cc
-
-randphull1_SOURCES = randphull1.cc
 
 refinewithconstraint1_SOURCES = refinewithconstraint1.cc
 refinewithconstraints1_SOURCES = refinewithconstraints1.cc
@@ -512,12 +484,6 @@ nnc_boundedaffineimage1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 nnc_boundedaffinepreimage1_SOURCES = boundedaffinepreimage1.cc
 nnc_boundedaffinepreimage1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 
-nnc_boundedbhrz03extrapolation1_SOURCES = boundedbhrz03extrapolation1.cc
-nnc_boundedvhrz03extrapolation1_CXXFLAGS = $(DERIVED_CXXFLAGS)
-
-nnc_boundedh79extrapolation1_SOURCES = boundedh79extrapolation1.cc
-nnc_boundedh79extrapolation1_CXXFLAGS = $(DERIVED_CXXFLAGS)
-
 nnc_bounds1_SOURCES = bounds1.cc
 nnc_bounds1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 
@@ -562,17 +528,8 @@ nnc_expandspacedim1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 nnc_foldspacedims1_SOURCES = foldspacedims1.cc
 nnc_foldspacedims1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 
-nnc_frombdshape1_SOURCES = frombdshape1.cc
-nnc_frombdshape1_CXXFLAGS = $(DERIVED_CXXFLAGS)
-
-nnc_frombox1_SOURCES = frombox1.cc
-nnc_frombox1_CXXFLAGS = $(DERIVED_CXXFLAGS)
-
 nnc_fromgrid1_SOURCES = fromgrid1.cc
 nnc_fromgrid1_CXXFLAGS = $(DERIVED_CXXFLAGS)
-
-nnc_fromoctagonalshape1_SOURCES = fromoctagonalshape1.cc
-nnc_fromoctagonalshape1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 
 nnc_generalizedaffineimage1_SOURCES = generalizedaffineimage1.cc
 nnc_generalizedaffineimage1_CXXFLAGS = $(DERIVED_CXXFLAGS)
@@ -636,9 +593,6 @@ nnc_polyhull1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 
 nnc_polyhullifexact1_SOURCES = polyhullifexact1.cc
 nnc_polyhullifexact1_CXXFLAGS = $(DERIVED_CXXFLAGS)
-
-nnc_randphull1_SOURCES = randphull1.cc
-nnc_randphull1_CXXFLAGS = $(DERIVED_CXXFLAGS)
 
 nnc_relations1_SOURCES = relations1.cc
 nnc_relations1_CXXFLAGS = $(DERIVED_CXXFLAGS)

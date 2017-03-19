@@ -23,18 +23,28 @@
 
 SUBDIRS = \
 . \
-Concrete_Expression \
+Polyhedron \
 CO_Tree \
 PIP_Problem \
 Powerset \
-Partially_Reduced_Product \
-Box \
 MIP_Problem \
-Octagonal_Shape \
-BD_Shape \
-Polyhedron \
 Grid \
 Watchdog
+
+# SUBDIRS = \
+# . \
+# Concrete_Expression \
+# CO_Tree \
+# PIP_Problem \
+# Powerset \
+# Partially_Reduced_Product \
+# Box \
+# MIP_Problem \
+# Octagonal_Shape \
+# BD_Shape \
+# Polyhedron \
+# Grid \
+# Watchdog
 
 AM_CPPFLAGS = -I$(top_builddir)/src -I$(top_srcdir)/src @extra_includes@
 

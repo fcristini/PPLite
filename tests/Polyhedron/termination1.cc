@@ -181,21 +181,21 @@ test06() {
   return termination_test_PR_2(ph_before, ph_after);
 }
 
-bool
-test07() {
-  Variable xp1(0);
-  Variable xp2(1);
-  Variable x1(2);
-  Variable x2(3);
-  BD_Shape<int> bds(4);
-  bds.add_constraint(x1 >= 2);
-  bds.add_constraint(xp1 >= x1 - 2);
-  bds.add_constraint(xp1 <= x1 - 1);
-  bds.add_constraint(xp2 == x2 + 1);
-  bds.add_constraint(xp2 >= 1);
-
-  return termination_test_MS(bds) &&  termination_test_PR(bds);
-}
+//////bool
+//////test07() {
+//////  Variable xp1(0);
+//////  Variable xp2(1);
+//////  Variable x1(2);
+//////  Variable x2(3);
+//////  BD_Shape<int> bds(4);
+//////  bds.add_constraint(x1 >= 2);
+//////  bds.add_constraint(xp1 >= x1 - 2);
+//////  bds.add_constraint(xp1 <= x1 - 1);
+//////  bds.add_constraint(xp2 == x2 + 1);
+//////  bds.add_constraint(xp2 >= 1);
+//////
+//////  return termination_test_MS(bds) &&  termination_test_PR(bds);
+//////}
 
 bool
 test08() {
@@ -517,7 +517,7 @@ BEGIN_MAIN
   DO_TEST(test04);
   DO_TEST(test05);
   DO_TEST(test06);
-  DO_TEST(test07);
+  //////DO_TEST(test07);
   DO_TEST(test08);
   DO_TEST(test09);
   DO_TEST(test10);
