@@ -66,11 +66,7 @@ site: http://bugseng.com/products/ppl/ . */
 // (i.e., if the former may interfere with computational weights).
 #define PPL_ASSERT(cond__)                                        \
   do {                                                            \
-    typedef Parma_Polyhedra_Library::Weightwatch_Traits W_Traits; \
-    W_Traits::Threshold old_weight__ = W_Traits::weight;          \
     PPL_ASSERT_IMPL_(cond__);                                     \
-    PPL_ASSERT_IMPL_(old_weight__ == W_Traits::weight             \
-                     && ("PPL_ASSERT_HEAVY has to be used here" != 0)); \
   } while (false)
 #endif // !defined(NDEBUG) && PPL_DEBUG_PPL_ASSERT
 

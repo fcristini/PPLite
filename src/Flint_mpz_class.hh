@@ -163,29 +163,41 @@ public:
 
   // Comparison
   inline bool operator==(const flint_mpz_class& rhs) const { return fmpz_cmp   (mp,rhs.mp) == 0; }
-  inline bool operator==(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) == 0; }
+  inline bool operator==(signed int rhs)             const { return fmpz_cmp_si(mp,rhs) == 0; }
+  inline bool operator==(unsigned int rhs)           const { return fmpz_cmp_ui(mp,rhs) == 0; }
   inline bool operator==(signed long rhs)            const { return fmpz_cmp_si(mp,rhs) == 0; }
-  inline bool operator==(int rhs)                    const { return fmpz_cmp_si(mp,rhs) == 0; }
+  inline bool operator==(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) == 0; }
+  ///inline bool operator==(double rhs)                 const { return fmpz_cmp (mp,rhs) == 0; }
   inline bool operator!=(const flint_mpz_class& rhs) const { return fmpz_cmp   (mp,rhs.mp) != 0; }
-  inline bool operator!=(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) != 0; }
+  inline bool operator!=(signed int rhs)             const { return fmpz_cmp_si(mp,rhs) != 0; }
+  inline bool operator!=(unsigned int rhs)           const { return fmpz_cmp_ui(mp,rhs) != 0; }
   inline bool operator!=(signed long rhs)            const { return fmpz_cmp_si(mp,rhs) != 0; }
-  inline bool operator!=(int rhs)                    const { return fmpz_cmp_si(mp,rhs) != 0; }
+  inline bool operator!=(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) != 0; }
+  ///inline bool operator!=(double rhs)                 const { return fmpz_cmp (mp,rhs) != 0; }
   inline bool operator< (const flint_mpz_class& rhs) const { return fmpz_cmp   (mp,rhs.mp) <  0; }
-  inline bool operator< (unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) <  0; }
+  inline bool operator< (signed int rhs)             const { return fmpz_cmp_si(mp,rhs) <  0; }
+  inline bool operator< (unsigned int rhs)           const { return fmpz_cmp_ui(mp,rhs) <  0; }
   inline bool operator< (signed long rhs)            const { return fmpz_cmp_si(mp,rhs) <  0; }
-  inline bool operator< (int rhs)                    const { return fmpz_cmp_si(mp,rhs) <  0; }
+  inline bool operator< (unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) <  0; }
+  ///inline bool operator< (double rhs)                 const { return fmpz_cmp (mp,rhs) <  0; }
   inline bool operator> (const flint_mpz_class& rhs) const { return fmpz_cmp   (mp,rhs.mp) >  0; }
-  inline bool operator> (unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) >  0; }
+  inline bool operator> (signed int rhs)             const { return fmpz_cmp_si(mp,rhs) >  0; }
+  inline bool operator> (unsigned int rhs)           const { return fmpz_cmp_ui(mp,rhs) >  0; }
   inline bool operator> (signed long rhs)            const { return fmpz_cmp_si(mp,rhs) >  0; }
-  inline bool operator> (int rhs)                    const { return fmpz_cmp_si(mp,rhs) >  0; }
+  inline bool operator> (unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) >  0; }
+  ///inline bool operator> (double rhs)                 const { return fmpz_cmp (mp,rhs) >  0; }
   inline bool operator<=(const flint_mpz_class& rhs) const { return fmpz_cmp   (mp,rhs.mp) <= 0; }
-  inline bool operator<=(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) <= 0; }
+  inline bool operator<=(signed int rhs)             const { return fmpz_cmp_si(mp,rhs) <= 0; }
+  inline bool operator<=(unsigned int rhs)           const { return fmpz_cmp_ui(mp,rhs) <= 0; }
   inline bool operator<=(signed long rhs)            const { return fmpz_cmp_si(mp,rhs) <= 0; }
-  inline bool operator<=(int rhs)                    const { return fmpz_cmp_si(mp,rhs) <= 0; }
+  inline bool operator<=(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) <= 0; }
+  ///inline bool operator<=(double rhs)                 const { return fmpz_cmp (mp,rhs) <= 0; }
   inline bool operator>=(const flint_mpz_class& rhs) const { return fmpz_cmp   (mp,rhs.mp) >= 0; }
-  inline bool operator>=(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) >= 0; }
+  inline bool operator>=(signed int rhs)             const { return fmpz_cmp_si(mp,rhs) >= 0; }
+  inline bool operator>=(unsigned int rhs)           const { return fmpz_cmp_ui(mp,rhs) >= 0; }
   inline bool operator>=(signed long rhs)            const { return fmpz_cmp_si(mp,rhs) >= 0; }
-  inline bool operator>=(int rhs)                    const { return fmpz_cmp_si(mp,rhs) >= 0; }
+  inline bool operator>=(unsigned long rhs)          const { return fmpz_cmp_ui(mp,rhs) >= 0; }
+  ///inline bool operator>=(double rhs)                 const { return fmpz_cmp (mp,rhs) >= 0; }
 
   // bitwise operators
   inline flint_mpz_class& operator>>(unsigned int exp) {  
@@ -222,17 +234,16 @@ public:
     return ret;
   }
 
-  flint_mpz_class & operator+=(const flint_mpz_class& rhs) { *this = *this + rhs; return *this; }
-  flint_mpz_class & operator++() { *this = *this + 1; return *this; }
-  const flint_mpz_class operator++(int) { flint_mpz_class temp(*this); ++*this; return temp; }
+  flint_mpz_class & operator+=(const flint_mpz_class& rhs) { fmpz_add(this->mp, this->mp, rhs.mp); return *this; }
+  flint_mpz_class & operator++() { fmpz_add_ui(this->mp, this->mp, 1); return *this; }
+  const flint_mpz_class operator++(int) { flint_mpz_class temp(*this); fmpz_add_ui(this->mp, this->mp, 1); return temp; }
   friend flint_mpz_class operator+(flint_mpz_class lhs, const flint_mpz_class& rhs) {
-    flint_mpz_class ret;
-    fmpz_add(ret.mp, lhs.mp, rhs.mp);
-    return ret;
+    fmpz_add(lhs.mp, lhs.mp, rhs.mp);
+    return lhs;
   }
 
   inline flint_mpz_class & operator-=(const flint_mpz_class& rhs) { *this = *this - rhs; return *this; }
-  flint_mpz_class & operator--() { *this = *this + 1; return *this; }
+  flint_mpz_class & operator--() { *this = *this - 1; return *this; }
   const flint_mpz_class operator--(int) { flint_mpz_class temp(*this); --*this; return temp; }
   friend flint_mpz_class operator-(flint_mpz_class lhs, const flint_mpz_class& rhs) {
     flint_mpz_class ret;

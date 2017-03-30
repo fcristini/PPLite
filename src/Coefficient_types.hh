@@ -126,9 +126,9 @@ namespace Parma_Polyhedra_Library {
 /*! \ingroup PPL_CXX_interface */
 #endif // defined(PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS)
 template <>
-struct Coefficient_traits_template<flint_mpz_class> {
+struct Coefficient_traits_template<Coefficient> {
   //! The type used for references to const unbounded integers.
-  typedef const flint_mpz_class& const_reference;
+  typedef const Coefficient& const_reference;
 };
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
