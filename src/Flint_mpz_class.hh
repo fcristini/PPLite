@@ -227,50 +227,75 @@ public:
       return is;  
   }
 
-  // Arithmetic
+  // Arithmetic negation
   flint_mpz_class operator-() const {
     flint_mpz_class ret;
     fmpz_neg(ret.mp, this->mp);
     return ret;
   }
 
+  friend flint_mpz_class operator+(signed   int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator+(unsigned int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator-(signed   int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator-(unsigned int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator*(signed   int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator*(unsigned int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator/(signed   int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator/(unsigned int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator%(signed   int  lhs, const flint_mpz_class& rhs);
+  friend flint_mpz_class operator%(unsigned int  lhs, const flint_mpz_class& rhs);
+
+  // New arithmetic sum implementation
   flint_mpz_class & operator+=(const flint_mpz_class& rhs) { fmpz_add(this->mp, this->mp, rhs.mp); return *this; }
+  flint_mpz_class & operator+=(signed   int  rhs) {
+    rhs >= 0 ? fmpz_add_ui(this->mp, this->mp, rhs) : fmpz_sub_ui(this->mp, this->mp, -rhs);
+    return *this;
+  }
+  flint_mpz_class & operator+=(unsigned int  rhs) { fmpz_add_ui(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator+=(signed   long rhs) { 
+    rhs >= 0 ? fmpz_add_ui(this->mp, this->mp, rhs) : fmpz_sub_ui(this->mp, this->mp, -rhs);
+    return *this;
+  }
+  flint_mpz_class & operator+=(unsigned long rhs) { fmpz_add_ui(this->mp, this->mp, rhs); return *this; }
   flint_mpz_class & operator++() { fmpz_add_ui(this->mp, this->mp, 1); return *this; }
   const flint_mpz_class operator++(int) { flint_mpz_class temp(*this); fmpz_add_ui(this->mp, this->mp, 1); return temp; }
-  friend flint_mpz_class operator+(flint_mpz_class lhs, const flint_mpz_class& rhs) {
-    fmpz_add(lhs.mp, lhs.mp, rhs.mp);
-    return lhs;
-  }
+  friend flint_mpz_class operator+(flint_mpz_class lhs, const flint_mpz_class& rhs) { return (lhs += rhs); }
 
-  inline flint_mpz_class & operator-=(const flint_mpz_class& rhs) { *this = *this - rhs; return *this; }
-  flint_mpz_class & operator--() { *this = *this - 1; return *this; }
-  const flint_mpz_class operator--(int) { flint_mpz_class temp(*this); --*this; return temp; }
-  friend flint_mpz_class operator-(flint_mpz_class lhs, const flint_mpz_class& rhs) {
-    flint_mpz_class ret;
-    fmpz_sub(ret.mp, lhs.mp, rhs.mp);
-    return ret;
+  // New arithmetic subtraction implementation
+  flint_mpz_class & operator-=(const flint_mpz_class& rhs) { fmpz_sub(this->mp, this->mp, rhs.mp); return *this; }
+  flint_mpz_class & operator-=(signed   int  rhs) {
+    rhs >= 0 ? fmpz_sub_ui(this->mp, this->mp, rhs) : fmpz_add_ui(this->mp, this->mp, -rhs);
+    return *this;
   }
+  flint_mpz_class & operator-=(unsigned int  rhs) { fmpz_sub_ui(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator-=(signed   long rhs) { 
+    rhs >= 0 ? fmpz_sub_ui(this->mp, this->mp, rhs) : fmpz_add_ui(this->mp, this->mp, -rhs);
+    return *this;
+  }
+  flint_mpz_class & operator-=(unsigned long rhs) { fmpz_sub_ui(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator--() { fmpz_sub_ui(this->mp, this->mp, 1); return *this; }
+  const flint_mpz_class operator--(int) { flint_mpz_class temp(*this); fmpz_sub_ui(this->mp, this->mp, 1); return temp; }
+  friend flint_mpz_class operator-(flint_mpz_class lhs, const flint_mpz_class& rhs) { return (lhs -= rhs); }
+
+  // New arithmetic multiplication implementation
+  flint_mpz_class & operator*=(const flint_mpz_class& rhs) { fmpz_mul(this->mp, this->mp, rhs.mp); return *this; }
+  flint_mpz_class & operator*=(signed   int  rhs) { fmpz_mul_si(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator*=(unsigned int  rhs) { fmpz_mul_ui(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator*=(signed   long rhs) { fmpz_mul_si(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator*=(unsigned long rhs) { fmpz_mul_ui(this->mp, this->mp, rhs); return *this; }
+  friend flint_mpz_class operator*(flint_mpz_class lhs, const flint_mpz_class& rhs) { return (lhs *= rhs); }
+
+  // New arithmetic division implementation
+  flint_mpz_class & operator/=(const flint_mpz_class& rhs) { fmpz_tdiv_q(this->mp, this->mp, rhs.mp); return *this; }
+  flint_mpz_class & operator/=(signed   int  rhs) { fmpz_tdiv_q_si(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator/=(unsigned int  rhs) { fmpz_tdiv_q_ui(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator/=(signed   long rhs) { fmpz_tdiv_q_si(this->mp, this->mp, rhs); return *this; }
+  flint_mpz_class & operator/=(unsigned long rhs) { fmpz_tdiv_q_ui(this->mp, this->mp, rhs); return *this; }
+  friend flint_mpz_class operator/(flint_mpz_class lhs, const flint_mpz_class& rhs) { return (lhs /= rhs); }
   
-  inline flint_mpz_class & operator*=(const flint_mpz_class& rhs) { *this = *this * rhs; return *this; }
-  friend flint_mpz_class operator*(flint_mpz_class lhs, const flint_mpz_class& rhs) {
-    flint_mpz_class ret;
-    fmpz_mul(ret.mp, lhs.mp, rhs.mp);
-    return ret;
-  }
-  
-  inline flint_mpz_class & operator/=(const flint_mpz_class& rhs) { *this = *this / rhs; return *this; }
-  friend flint_mpz_class operator/(flint_mpz_class lhs, const flint_mpz_class& rhs) {
-    flint_mpz_class ret;
-    fmpz_tdiv_q(ret.mp, lhs.mp, rhs.mp);
-    return ret;
-  }
-  
-  inline flint_mpz_class & operator%=(const flint_mpz_class& rhs) { *this = *this / rhs; return *this; }
-  friend flint_mpz_class operator%(flint_mpz_class lhs, const flint_mpz_class& rhs) {
-    flint_mpz_class ret;
-    fmpz_mod(ret.mp, lhs.mp, rhs.mp);
-    return ret;
-  }
+  // New arithmetic modulus implementation
+  flint_mpz_class & operator%=(const flint_mpz_class& rhs) { fmpz_mod(this->mp, this->mp, rhs.mp); return *this; }
+  friend flint_mpz_class operator%(flint_mpz_class lhs, const flint_mpz_class& rhs) { return (lhs %= rhs); }
 
   // Some math
   inline flint_mpz_class getAbs() const {
@@ -292,6 +317,23 @@ public:
   }
 
 };
+
+
+inline flint_mpz_class operator+(signed   int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret += rhs); }
+inline flint_mpz_class operator+(unsigned int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret += rhs); }
+
+inline flint_mpz_class operator-(signed   int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret -= rhs); }
+inline flint_mpz_class operator-(unsigned int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret -= rhs); }
+
+inline flint_mpz_class operator*(signed   int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret *= rhs); }
+inline flint_mpz_class operator*(unsigned int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret *= rhs); }
+
+inline flint_mpz_class operator/(signed   int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret /= rhs); }
+inline flint_mpz_class operator/(unsigned int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret /= rhs); }
+
+inline flint_mpz_class operator%(signed   int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret %= rhs); }
+inline flint_mpz_class operator%(unsigned int  lhs, const flint_mpz_class& rhs) { flint_mpz_class ret(lhs); return (ret %= rhs); }
+
 
 namespace Parma_Polyhedra_Library {
 typedef flint_mpz_class Coefficient; 
