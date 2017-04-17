@@ -30,45 +30,64 @@ namespace Parma_Polyhedra_Library {
 
 inline void
 neg_assign(flint_mpz_class& x) {
-  x = -x;
+  flint_mpz_class tmp(x);
+  fmpz_neg(x.mp, tmp.mp);
 }
 
 inline void
 neg_assign(flint_mpz_class& x, const flint_mpz_class& y) {
-  x = -y;
+  fmpz_neg(x.mp, y.mp);
 }
 
 inline void
 abs_assign(flint_mpz_class& x) {
-  x = x.getAbs();
+  flint_mpz_class tmp(x);
+  fmpz_abs(x.mp, tmp.mp);
 }
 
 inline void
 abs_assign(flint_mpz_class& x, const flint_mpz_class& y) {
-  x = y.getAbs();
+  fmpz_abs(x.mp, y.mp);
 }
 
 inline void
 gcd_assign(flint_mpz_class& x, const flint_mpz_class& y, const flint_mpz_class& z) {
-  x = x.getGCD(y, z);
+  /////if ((y != 0) && (z != 0)) {
+    fmpz_gcd(x.mp, y.mp, z.mp);
+  /////}
+  /////else {
+  /////  x = 0;
+  /////}
 }
 
 inline void
 rem_assign(flint_mpz_class& x, const flint_mpz_class& y, const flint_mpz_class& z) {
-  fmpz_fdiv_r(x.mp, y.mp, z.mp);
+  //x = (y % z);
+
+  //fmpz_fdiv_r(x.mp, y.mp, z.mp);
+
+  flint_mpz_class tmp;
+  __PPLITE_FMPZ_FMPZ_MOD_FUNC(tmp.mp, x.mp, y.mp, z.mp);
+
 }
 
 inline void
 gcdext_assign(flint_mpz_class& x, flint_mpz_class& s, flint_mpz_class& t,
               const flint_mpz_class& y, const flint_mpz_class& z) {
-  fmpz_xgcd(x.mp,
-            s.mp, t.mp,
-            y.mp, z.mp);
+  /////if ((y != 0) && (z != 0)) {
+    fmpz_xgcd(x.mp, s.mp, t.mp, y.mp, z.mp);
+  /////}
+  /////else {
+  /////  x = 0;
+  /////  s = 0;
+  /////  t = 0;
+  /////}
+  //std::cout << "gcdext_assign!" << std::endl;  
 }
 
 inline void
 lcm_assign(flint_mpz_class& x, const flint_mpz_class& y, const flint_mpz_class& z) {
-  x = x.getLCM(y, z);
+  fmpz_lcm(x.mp, y.mp, z.mp);
 }
 
 inline void
@@ -88,7 +107,7 @@ mul_2exp_assign(flint_mpz_class& x, const flint_mpz_class& y, const unsigned int
 
 inline void
 div_2exp_assign(flint_mpz_class& x, const flint_mpz_class& y, const unsigned int exp) {
-  fmpz_tdiv_q_2exp(x.mp, y.mp, exp);
+  __PPLITE_FMPZ_2EXT_DIV_FUNC(x.mp, y.mp, exp);
 }
 
 inline void

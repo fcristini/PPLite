@@ -119,7 +119,7 @@ namespace Parma_Polyhedra_Library {
       <CODE>mpz_class</CODE> type implemented by the C++ interface
       of the GMP library (this is the default configuration).
 */
-//////typedef PPL_COEFFICIENT_TYPE Coefficient;
+typedef PPL_COEFFICIENT_TYPE Coefficient;
 
 #ifdef PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
 //! Coefficient traits specialization for unbounded integers.

@@ -29,9 +29,9 @@ site: http://bugseng.com/products/ppl/ . */
 
 #include "FLINT_Integer_defs.hh"
 
-/////#ifdef PPL_GMP_INTEGERS
-/////#include "GMP_Integer_defs.hh"
-/////#endif
+#ifdef PPL_GMP_INTEGERS
+#include "GMP_Integer_defs.hh"
+#endif
 
 #include <iosfwd>
 
